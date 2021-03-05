@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InscripcionController;
 use Inertia\Inertia;
 
 /*
@@ -24,6 +25,10 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/inscripcion', [InscripcionController::class, 'index'])->name('inscripcion');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+

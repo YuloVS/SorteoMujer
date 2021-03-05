@@ -1,20 +1,20 @@
 <template>
 
-        <div class="grid grid-cols-3 gap-4 mt-6 px-6">
-            <div class="col-span-2 mt-10">
-                <div class="text-center inline-block text-4xl font-bold text-green-900">
-                    Nuevo Usuario
-                </div>
-            </div>
-            <div class="flex justify-end mt-3">
-                <img class="w-32 inline-block" v-bind:src = " '/images/añadir_usuario.svg' " alt="">
+    <div class="grid grid-cols-3 gap-4 mt-6 px-6">
+        <div class="col-span-2 mt-10">
+            <div class="text-center inline-block text-4xl font-bold text-green-900">
+                Nuevo Usuario
             </div>
         </div>
+        <div class="flex justify-end mt-3">
+            <img class="w-32 inline-block" v-bind:src = " '/images/añadir_usuario.svg' " alt="">
+        </div>
+    </div>
 
-        <hr class="bg-navbar mt-4" style="height:2px;border-width:0">
+    <hr class="bg-navbar mt-4" style="height:2px;border-width:0">
 
-        <div class="flex justify-center">
-            <div class="bg-white shadow-md rounded mb-10 p-6 mt-4">
+    <div class="flex justify-center">
+        <div class="bg-white shadow-md rounded mb-10 p-6 mt-4">
             <form @submit.prevent="submit">
                 <div class="grid grid-cols-1 gap-4">
                     <!--primer columna-->
@@ -24,9 +24,9 @@
                              <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-12">
                                 <i class="fa fa-address-card-o" aria-hidden="true"></i>
                              </span>
-                                    <label for="dni" class="font-semibold text-green-900 ">DNI</label><span class="text-gray-400 ml-1">(sin puntos)</span>
-                                    <input v-model="form.dni" id="dni" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10">
-                                    <!--<span class="my-0 text-red-500" >{{ form.__inertia.page.props.errors.dni }}</span>-->
+                            <label for="dni" class="font-semibold text-green-900 ">DNI</label><span class="text-gray-400 ml-1">(sin puntos)</span>
+                            <input v-model="form.dni" id="dni" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10">
+                            <!--<span class="my-0 text-red-500" >{{ form.__inertia.page.props.errors.dni }}</span>-->
                         </div>
 
 
@@ -93,7 +93,7 @@
             </form>
 
         </div>
-        </div>
+    </div>
 
 </template>
 
