@@ -88,6 +88,7 @@ export default {
                 nombre: null,
                 apellido: null,
                 telefono : null,
+                direccion : null,
                 email : null,
             }),
         }
