@@ -31,7 +31,8 @@ class InscripcionController extends Controller
             $inscripcion->telefono = $request->telefono;
             $inscripcion->email = $request->email;
             $inscripcion->save();
-            //return view('a.la.vista.que.corresponda');
+            $numeroFormateado = number_format($inscripcion->id, 5, ".");
+            return $numeroFormateado;
         }
     }
 }
