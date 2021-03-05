@@ -3,7 +3,7 @@
         <jet-banner />
         <div class="min-h-screen bg-gray-50">
             <nav class="border-b border-gray-100 py-6" style="background: #fe0070">
-                <div class="mx-auto px-14">
+                <div class="mx-auto px-12">
                     <div class="flex justify-between">
                         <div class="flex">
 
@@ -72,7 +72,7 @@
 <!--                    </div>-->
 
                     <!-- Responsive Settings Options -->
-                    <div class="pt-2 pb-1 border-t border-gray-200 bg-white shadow-lg">
+                    <div class="pt-2 pb-1 text-white ">
 
                         <div class="mt-3 space-y-1">
 
