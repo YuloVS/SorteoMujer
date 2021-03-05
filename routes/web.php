@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\InscripcionController;
+use App\Http\Controllers\SorteoController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -20,3 +21,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 route::get('/formulario', [InscripcionController::Class, 'index']);
 route::post('/formulario', [InscripcionController::Class, 'store']);
+
+route::get('/sorteo', [SorteoController::Class, 'realizarSorteo']);
