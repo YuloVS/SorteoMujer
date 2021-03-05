@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Inscripcion;
 use Illuminate\Http\Request;
+use Inertia\Controller;
 use Inertia\Inertia;
 
 class InscripcionController extends Controller
@@ -11,7 +12,7 @@ class InscripcionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index()
     {

@@ -3,7 +3,7 @@
     <div class="grid grid-cols-3 gap-4 mt-6 px-6">
         <div class="col-span-2 mt-10">
             <div class="text-center inline-block text-4xl font-bold text-green-900">
-                Nuevo Usuario
+                Inscripción
             </div>
         </div>
         <div class="flex justify-end mt-3">
@@ -13,13 +13,10 @@
 
     <hr class="bg-navbar mt-4" style="height:2px;border-width:0">
 
-    <div class="flex justify-center">
+    <div class="flex justify-center bg-gray-100">
         <div class="bg-white shadow-md rounded mb-10 p-6 mt-4">
             <form @submit.prevent="submit">
                 <div class="grid grid-cols-1 gap-4">
-                    <!--primer columna-->
-                    <div>
-
                         <div class="relative flex w-full flex-wrap items-stretch mb-3">
                              <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-12">
                                 <i class="fa fa-address-card-o" aria-hidden="true"></i>
@@ -48,12 +45,6 @@
                             <!--<span class="my-0 text-red-500" >{{ form.__inertia.page.props.errors.apellido }}</span>-->
                         </div>
 
-
-                    </div>
-
-
-                    <!--segunda columna-->
-                    <div>
                         <div class="grid  gap-4">
                             <div class="relative flex w-full flex-wrap items-stretch mb-3">
                                 <label for="telefono" class="font-semibold text-green-900 mr-7">Teléfono</label>
@@ -65,8 +56,6 @@
                             </div>
                         </div>
 
-
-
                         <div class="grid  gap-4">
                             <div class="relative flex w-full flex-wrap items-stretch mt-3 mb-3">
                                 <label for="email" class="font-semibold text-green-900 mr-7">Email</label>
@@ -77,11 +66,6 @@
                                 <!--<span class="my-0 text-red-500" >{{ form.__inertia.page.props.errors.email }}</span>-->
                             </div>
                         </div>
-
-
-                    </div>
-
-
                 </div>
 
                 <div class=" flex justify-center border-t mt-6 pt-3">
@@ -123,7 +107,7 @@ export default {
     methods: {
 
         submit() {
-            this.$inertia.post('/usuarios', this.form)
+                this.$inertia.post('/InscripcionController', this.form)
         },
     }
 }

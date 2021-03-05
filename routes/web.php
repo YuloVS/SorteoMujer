@@ -25,7 +25,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/inscripcion', [InscripcionController::class, 'index'])->name('inscripcion');
+//Route::get('/inscripcion', [InscripcionController::class, 'index'])->name('inscripcion');
+Route::inertia('/inscripcion', 'inscripcion');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
