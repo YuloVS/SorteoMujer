@@ -25,6 +25,7 @@ class StoreInscripcionRequest extends FormRequest
     public function messages()
     {
         return [
+            'dni.digits_between' => 'El DNI ingresado debe contener entre 7 y 8 dígitos.',
             'dni.required' => 'Debe ingresar su DNI',
             'dni.integer' => 'Debe ingresar solo números',
             'dni.unique' => 'Ya existe una persona participando con éste DNI',
@@ -38,7 +39,8 @@ class StoreInscripcionRequest extends FormRequest
             'telefono.required' => 'Debe ingresar un número de contacto',
             'telefono.max' => 'Debe ingresar un número válido',
 
-            'email.required' => 'Debe ingresar un mail de contacto'
+            'email.required' => 'Debe ingresar un mail de contacto',
+            'email.email' => 'Debe ingresar un mail válido'
         ];
     }
 }
