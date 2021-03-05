@@ -3,10 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreInscripcionRequest;
+use App\Models\Inscripcion;
 use Illuminate\Http\Request;
 
 class InscripcionController extends Controller
 {
+    /*
+     * Método que retorna la vista para la inscripción
+     */
+    public function index()
+    {
+        return view('Prueba.inscripcion');
+    }
+
+
     /*
      * Método que almacena la inscripcion para el sorteo
      * verificando que no se registre mas de una vez una misma persona
@@ -20,9 +30,8 @@ class InscripcionController extends Controller
             $inscripcion->apellido = $request->apellido;
             $inscripcion->telefono = $request->telefono;
             $inscripcion->email = $request->email;
-            $inscripcion->ganador = $request->ganador;
             $inscripcion->save();
-            return view('a.la.vista.que.corresponda');
+            //return view('a.la.vista.que.corresponda');
         }
     }
 }
