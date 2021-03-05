@@ -7,7 +7,7 @@
                 </div>
             </div>
             <div class="flex justify-end mt-3">
-                <img class="w-32 inline-block" v-bind:src = " '/images/añadir_usuario.svg' " alt="">
+                <!--<img class="w-32 inline-block" v-bind:src = " '/images/añadir_usuario.svg' " alt="">-->
             </div>
         </div>
 

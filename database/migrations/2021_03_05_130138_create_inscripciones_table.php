@@ -19,7 +19,7 @@ class CreateInscripcionesTable extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->string('telefono');
-            $table->string('email')->nullable()->unique();
+            $table->string('email')->nullable();
             $table->integer('ganador')->default(0);
             $table->timestamps();
         });

@@ -2,86 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreInscripcionRequest;
 use App\Models\Inscripcion;
 use Illuminate\Http\Request;
 use Inertia\Controller;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class InscripcionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Inertia\Response
+     * @return Response
      */
     public function index()
     {
-        return Inertia::render('inscripcion');
+        return Inertia::render('Inscripcion');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+    /*
+     * Método que almacena la inscripcion para el sorteo
+     * verificando que no se registre mas de una vez una misma persona
      */
-    public function store(Request $request)
+    public function store(StoreInscripcionRequest $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Inscripcion  $inscripcion
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Inscripcion $inscripcion)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Inscripcion  $inscripcion
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Inscripcion $inscripcion)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Inscripcion  $inscripcion
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Inscripcion $inscripcion)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Inscripcion  $inscripcion
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Inscripcion $inscripcion)
-    {
-        //
+        dd($request);
+        if ($request->validated()) {
+            $inscripcion = new Inscripcion();
+            $inscripcion->dni = $request->dni;
+            $inscripcion->nombre = $request->nombre;
+            $inscripcion->apellido = $request->apellido;
+            $inscripcion->telefono = $request->telefono;
+            $inscripcion->email = $request->email;
+            $inscripcion->save();
+            //return view('a.la.vista.que.corresponda');
+        }
     }
 }

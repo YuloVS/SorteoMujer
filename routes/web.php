@@ -1,20 +1,9 @@
 <?php
 
+//use App\Http\Controllers\InscripcionController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\InscripcionController;
 use Inertia\Inertia;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -26,12 +15,14 @@ Route::get('/', function () {
 });
 
 //Route::get('/inscripcion', [InscripcionController::class, 'index'])->name('inscripcion');
-Route::inertia('/inscripcion', 'inscripcion');
+Route::inertia('/inscripcion', 'Inscripcion');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
-Route::post('/InscripcionController', function (\Illuminate\Http\Request $request){ $request->dd(); });
+//Route::post('/InscripcionController', function (\Illuminate\Http\Request $request){ $request->dd(); });
 
 
+//route::get('/inscripcion', [InscripcionController::Class, 'index']);
+//route::post('/inscripcion', [InscripcionController::Class, 'store']);

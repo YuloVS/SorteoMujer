@@ -84,10 +84,11 @@
 
 <script>
 //import seguimientoLayout from '@/Layouts/seguimientoLayout'
-
+import $inertia from $inertiajs/inertia-vue
 export default {
     components: {
         //seguimientoLayout,
+
     },
 
 
