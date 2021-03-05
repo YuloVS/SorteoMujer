@@ -1,6 +1,6 @@
 <template>
 	<FormularioLayout>
-		<div class="flex justify-center bg-gray-50 mt-2">
+		<div class="flex justify-center bg-gray-50 mt-2 mb-auto">
             <div class="bg-gray-50 shadow-lg rounded mb-4 p-4">
                 <img class="w-72 mx-auto " v-bind:src = "'/img/DíaDeLaMujer.svg'" alt="">
                 <h1 class="text-4xl font-bold text-center mx-auto text-black mb-2">Participá del sorteo</h1>
