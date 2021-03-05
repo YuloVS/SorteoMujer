@@ -9,9 +9,4 @@ class Inscripcion extends Model
 {
     use HasFactory;
     protected $table = "inscripciones";
-
-    public function getIdAttribute($value)
-    {
-        return ucfirst($value);
-    }
 }

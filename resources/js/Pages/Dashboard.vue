@@ -1,5 +1,5 @@
 <template>
-    <SorteoLayout>
+    <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Dashboard
@@ -13,17 +13,15 @@
                 </div>
             </div>
         </div>
-    </SorteoLayout>
+    </app-layout>
 </template>
 
 <script>
     import AppLayout from '@/Layouts/AppLayout'
     import Welcome from '@/Jetstream/Welcome'
-    import SorteoLayout from "@/Layouts/SorteoLayout";
 
     export default {
         components: {
-            SorteoLayout,
             AppLayout,
             Welcome,
         },
