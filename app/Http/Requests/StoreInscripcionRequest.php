@@ -18,7 +18,8 @@ class StoreInscripcionRequest extends FormRequest
             'nombre' => 'required|string',
             'apellido' => 'required|string',
             'telefono' => 'required|max:15',
-            'email' => 'required|email'
+            'email' => 'required|email',
+            'direccion' => 'required'
         ];
     }
 
@@ -40,7 +41,10 @@ class StoreInscripcionRequest extends FormRequest
             'telefono.max' => 'Debe ingresar un número válido',
 
             'email.required' => 'Debe ingresar un mail de contacto',
-            'email.email' => 'Debe ingresar un mail válido'
+            'email.email' => 'Debe ingresar un mail válido',
+
+            'direccion.required' => 'Debe ingresar una dirección',
+            
         ];
     }
 }
