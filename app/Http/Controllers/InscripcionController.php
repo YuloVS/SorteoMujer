@@ -10,12 +10,8 @@ use Inertia\Response;
 
 class InscripcionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index()
+    public function show()
+    : Response
     {
         return Inertia::render('Inscripcion');
     }
