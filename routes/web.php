@@ -1,19 +1,11 @@
 <?php
 
+
+use App\Http\Controllers\InscripcionController;
+use App\Http\Controllers\SorteoController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -24,6 +16,15 @@ Route::get('/', function () {
     ]);
 });
 
+//Route::get('/inscripcion', [InscripcionController::class, 'index'])->name('inscripcion');
+//Route::inertia('/inscripcion', 'inscripcion');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+
+route::get('/formulario', [InscripcionController::Class, 'index']);
+route::post('/formulario', [InscripcionController::Class, 'store']);
+
+route::get('/sorteo', [SorteoController::Class, 'realizarSorteo']);
