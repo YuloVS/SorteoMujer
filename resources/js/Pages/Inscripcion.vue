@@ -22,7 +22,7 @@
                                 <i class="fa fa-address-card-o" aria-hidden="true"></i>
                              </span>
 							<label for="dni" class="font-semibold text-green-900 ">DNI</label><span class="text-gray-400 ml-1">(sin puntos)</span>
-							<input v-model="form.dni" id="dni" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10">
+							<input v-model="form.dni" id="dni" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full ">
 							<span class="my-0 text-red-500" v-if="form.errors.dni" v-text="form.errors.dni"></span>
 						</div>
 
@@ -32,8 +32,8 @@
 							<span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-12">
                             <i class="fa fa-user" aria-hidden="true"></i>
                           </span>
-							<input v-model="form.nombre" id="nombre" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
-							<!--<span class="my-0 text-red-500" >{{ form.__inertia.page.props.errors.nombre }}</span>-->
+							<input v-model="form.nombre" id="nombre" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full "/>
+                            <span class="my-0 text-red-500" v-if="form.errors.nombre" v-text="form.errors.nombre"></span>
 						</div>
 
 						<div class="relative flex w-full flex-wrap items-stretch mb-3">
@@ -41,8 +41,8 @@
 							<span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-12">
                             <i class="fa fa-user" aria-hidden="true"></i>
                           </span>
-							<input v-model="form.apellido" id="apellido" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
-							<!--<span class="my-0 text-red-500" >{{ form.__inertia.page.props.errors.apellido }}</span>-->
+							<input v-model="form.apellido" id="apellido" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full "/>
+                            <span class="my-0 text-red-500" v-if="form.errors.apellido" v-text="form.errors.apellido"></span>
 						</div>
 
 						<div class="grid  gap-4">
@@ -51,21 +51,32 @@
 								<span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-12">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                             </span>
-								<input v-model="form.telefono" id="telefono" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+								<input v-model="form.telefono" id="telefono" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full "/>
 								<span class="my-0 text-red-500" v-if="form.errors.telefono" v-text="form.errors.telefono"></span>
 							</div>
 						</div>
 
-						<div class="grid  gap-4">
-							<div class="relative flex w-full flex-wrap items-stretch mt-3 mb-3">
-								<label for="email" class="font-semibold text-green-900 mr-7">Email</label>
-								<span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-12">
+                        <div class="grid  gap-4">
+                            <div class="relative flex w-full flex-wrap items-stretch mt-3 mb-3">
+                                <label for="direccion" class="font-semibold text-green-900 mr-7">Dirección</label>
+                                <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-12">
                                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
                             </span>
-								<input v-model="form.email" id="email" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
-								<!--<span class="my-0 text-red-500" >{{ form.__inertia.page.props.errors.email }}</span>-->
-							</div>
-						</div>
+                                <input v-model="form.direccion" id="direccion" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full "/>
+                                <span class="my-0 text-red-500" v-if="form.errors.direccion" v-text="form.errors.direccion"></span>
+                            </div>
+                        </div>
+
+                        <div class="grid  gap-4">
+                            <div class="relative flex w-full flex-wrap items-stretch mt-3 mb-3">
+                                <label for="email" class="font-semibold text-green-900 mr-7">Email</label>
+                                <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-12">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            </span>
+                                <input v-model="form.email" id="email" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full "/>
+                                <span class="my-0 text-red-500" v-if="form.errors.email" v-text="form.errors.email"></span>
+                            </div>
+                        </div>
 					</div>
 
 					<div class=" flex justify-center border-t mt-6 pt-3">
