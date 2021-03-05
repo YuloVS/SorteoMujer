@@ -35,9 +35,6 @@ class InscripcionController extends Controller
             $inscripcion->telefono = $request->telefono;
             $inscripcion->email = $request->email;
             $inscripcion->save();
-            
-            //return view('a.la.vista.que.corresponda')->with($inscripcion->id);
-            //return 'ud ha sido inscripto con el número: ' . $inscripcion->id;
             return Inertia::render('Inscripto');
         }
     }
