@@ -1,9 +1,10 @@
 <?php
 
-//use App\Http\Controllers\InscripcionController;
+
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use \App\Http\Controllers\InscripcionController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -15,7 +16,7 @@ Route::get('/', function () {
 });
 
 //Route::get('/inscripcion', [InscripcionController::class, 'index'])->name('inscripcion');
-Route::inertia('/inscripcion', 'Inscripcion');
+//Route::inertia('/inscripcion', 'inscripcion');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -24,5 +25,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //Route::post('/InscripcionController', function (\Illuminate\Http\Request $request){ $request->dd(); });
 
 
-//route::get('/inscripcion', [InscripcionController::Class, 'index']);
-//route::post('/inscripcion', [InscripcionController::Class, 'store']);
+route::get('/formulario', [InscripcionController::class, 'index']);
+route::post('/formulario', [InscripcionController::class, 'store']);

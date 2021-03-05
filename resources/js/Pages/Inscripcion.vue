@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="flex justify-end mt-3">
-            <img class="w-32 inline-block" v-bind:src = " '/images/añadir_usuario.svg' " alt="">
+            <!--<img class="w-32 inline-block" v-bind:src = " '/images/añadir_usuario.svg' " alt="">-->
         </div>
     </div>
 
@@ -23,7 +23,7 @@
                              </span>
                             <label for="dni" class="font-semibold text-green-900 ">DNI</label><span class="text-gray-400 ml-1">(sin puntos)</span>
                             <input v-model="form.dni" id="dni" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10">
-                            <!--<span class="my-0 text-red-500" >{{ form.__inertia.page.props.errors.dni }}</span>-->
+                            <span class="my-0 text-red-500" v-if="form.errors.dni" v-text="form.errors.dni"></span>
                         </div>
 
 
@@ -52,7 +52,7 @@
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                             </span>
                                 <input v-model="form.telefono" id="telefono" type="text" placeholder="..." class="border focus-within:border-green-600 px-6 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
-                                <!--<span class="my-0 text-red-500" >{{ form.__inertia.page.props.errors.telefono }}</span>-->
+                                <span class="my-0 text-red-500" v-if="form.errors.telefono" v-text="form.errors.telefono"></span>
                             </div>
                         </div>
 
@@ -84,7 +84,6 @@
 
 <script>
 //import seguimientoLayout from '@/Layouts/seguimientoLayout'
-import $inertia from $inertiajs/inertia-vue
 export default {
     components: {
         //seguimientoLayout,
@@ -108,7 +107,7 @@ export default {
     methods: {
 
         submit() {
-                this.$inertia.post('/InscripcionController', this.form)
+                this.form.post('/formulario')
         },
     }
 }

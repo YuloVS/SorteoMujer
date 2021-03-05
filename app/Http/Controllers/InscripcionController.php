@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreInscripcionRequest;
 use App\Models\Inscripcion;
-use Illuminate\Http\Request;
 use Inertia\Controller;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -28,7 +27,6 @@ class InscripcionController extends Controller
      */
     public function store(StoreInscripcionRequest $request)
     {
-        dd($request);
         if ($request->validated()) {
             $inscripcion = new Inscripcion();
             $inscripcion->dni = $request->dni;
