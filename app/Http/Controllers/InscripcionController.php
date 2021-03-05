@@ -4,16 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreInscripcionRequest;
 use App\Models\Inscripcion;
-use Illuminate\Http\Request;
+use Inertia\Controller;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class InscripcionController extends Controller
 {
-    /*
-     * Método que retorna la vista para la inscripción
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
      */
     public function index()
     {
-        return view('Prueba.inscripcion');
+        return Inertia::render('Inscripcion');
     }
 
 
