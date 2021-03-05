@@ -24,6 +24,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 //Route::post('/InscripcionController', function (\Illuminate\Http\Request $request){ $request->dd(); });
 
+route::get('/inscripcion_completa', [InscripcionController::class, 'index'])->name('inscripto');
 
 route::get('/formulario', [InscripcionController::class, 'index']);
 route::post('/formulario', [InscripcionController::class, 'store']);
