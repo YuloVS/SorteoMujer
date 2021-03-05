@@ -17,11 +17,10 @@
 			</nav>
 
 			<!-- Page Content -->
-			<main>
+			<main class="bg-red-100">
 				<slot></slot>
 			</main>
 
-			<Footer></Footer>
 		</div>
 	</div>
 </template>
