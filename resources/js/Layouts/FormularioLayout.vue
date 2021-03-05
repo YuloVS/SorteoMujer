@@ -1,11 +1,11 @@
 <template>
     <div>
         <jet-banner />
-        <div class="min-h-screen bg-gray-50">
+        <div class="flex flex-col bg-gray-50 h-screen">
 
 
             <!-- Page Content -->
-            <main>
+            <main class="mb-auto mt-3">
                 <slot></slot>
             </main>
 
