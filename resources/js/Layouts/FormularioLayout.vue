@@ -1,7 +1,7 @@
 <template>
     <div>
         <jet-banner />
-        <div class="flex flex-col bg-gray-50 h-screen">
+        <div class="flex flex-col bg-gray-50 h-screen bg-gray-50">
             <main class="mb-auto mt-auto">
                 <slot></slot>
             </main>
