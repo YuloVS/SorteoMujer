@@ -9,7 +9,7 @@
                     <div class="flex flex-col md:flex-row">
                         <div class="flex flex-col">
                             <label class="text-base font-bold text-black">DNI <span class="text-gray-500 text-sm font-medium">(Sin puntos)</span></label>
-                            <input v-model="form.dni" id="dni" type="text" class="px-3 py-2 bg-gray-50 border-2 border-gray-300 rounded-md text-gray-700 focus:border-pink-500 focus:outline-none focus:ring-0">
+                            <input v-model="form.dni" id="dni" type="text" class="px-3 py-2 bg-gray-50 border-2 border-gray-300 rounded-md text-gray-700 focus:border-pink-500 focus:outline-none focus:ring-0" autofocus>
                             <span class="w-72 md:w-52 text-red-500" v-if="form.errors.dni" v-text="form.errors.dni"></span>
                         </div>
                         <div class="flex flex-col mt-3 md:mt-0 md:ml-6">
@@ -46,8 +46,10 @@
                 </form>
             </div>
 		</div>
-		<Modal :show="form.recentlySuccessful">
-			el pepe
+		<Modal :max-width="'sm'" :show="form.recentlySuccessful">
+            <div class="p-4 bg-gray-50">
+                <img class="w-80 mx-auto" v-bind:src = "'/img/Ok.svg'" alt="">
+            </div>
 		</Modal>
 	</FormularioLayout>
 </template>
