@@ -46,6 +46,9 @@
                 </form>
             </div>
 		</div>
+		<Modal :show="form.recentlySuccessful">
+			el pepe
+		</Modal>
 	</FormularioLayout>
 </template>
 
@@ -53,8 +56,10 @@
 <script>
 import FormularioLayout from "@/Layouts/FormularioLayout";
 import Label from "@/Jetstream/Label";
+import Modal from "@/Jetstream/Modal";
 export default {
     components: {
+        Modal,
         Label,
         FormularioLayout,
     },
@@ -66,16 +71,21 @@ export default {
                 nombre: null,
                 apellido: null,
                 telefono : null,
+	            direccion: null,
                 email : null,
             }),
         }
     },
 
     methods: {
-
         submit() {
-                this.form.post('/formulario')
+                this.form.post('/formulario', {
+                    preserveScroll: true,
+                    onSuccess: () => {
+                        this.form.reset();
+                    }
+                })
         },
-    }
+    },
 }
 </script>
