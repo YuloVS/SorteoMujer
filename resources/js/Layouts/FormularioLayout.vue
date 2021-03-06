@@ -5,7 +5,7 @@
 
 
             <!-- Page Content -->
-            <main class="mb-auto mt-3">
+            <main class="mb-auto mt-3 2xl:py-32">
                 <slot></slot>
             </main>
 
