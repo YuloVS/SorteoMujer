@@ -2,13 +2,9 @@
     <div>
         <jet-banner />
         <div class="flex flex-col bg-gray-50 h-screen">
-
-
-            <!-- Page Content -->
-            <main class="mb-auto mt-3 2xl:py-32">
+            <main class="mb-auto mt-auto">
                 <slot></slot>
             </main>
-
             <Footer></Footer>
         </div>
     </div>
