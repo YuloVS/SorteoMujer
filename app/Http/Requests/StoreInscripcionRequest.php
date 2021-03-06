@@ -17,8 +17,8 @@ class StoreInscripcionRequest extends FormRequest
     {
         return [
             'dni' => 'digits_between:7,8|required|integer|unique:App\Models\Inscripcion,dni',
-            'nombre' => 'required|alpha|max:255',
-            'apellido' => 'required|alpha|max:255',
+            'nombre' => 'required|regex:/^[\pL\s\-]+$/u|max:255',
+            'apellido' => 'required|regex:/^[\pL\s\-]+$/u|max:255',
             'telefono' => 'required|integer|digits_between:9,10',
             'email' => 'required|email',
             'direccion' => 'required|max:255'
@@ -35,11 +35,11 @@ class StoreInscripcionRequest extends FormRequest
             'dni.unique' => 'Esta persona ya está participando.',
 
             'nombre.required' => 'Debe ingresar su nombre.',
-            'nombre.alpha' => 'Ingrese un nombre válido.',
+            'nombre.regex' => 'Ingrese un nombre válido.',
             'nombre.max' => 'Ingrese un nombre válido.',
 
             'apellido.required' => 'Debe ingresar su apellido.',
-            'apellido.alpha' => 'Ingrese un apellido válido.',
+            'apellido.regex' => 'Ingrese un apellido válido.',
             'apellido.max' => 'Ingrese un apellido válido.',
 
             'telefono.required' => 'Debe ingresar un número de contacto.',
