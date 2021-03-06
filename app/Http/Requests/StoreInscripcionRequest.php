@@ -17,8 +17,8 @@ class StoreInscripcionRequest extends FormRequest
     {
         return [
             'dni' => 'digits_between:7,8|required|integer|unique:App\Models\Inscripcion,dni',
-            'nombre' => 'required|regex:/^[\pL\s\-]+$/u|max:255',
-            'apellido' => 'required|regex:/^[\pL\s\-]+$/u|max:255',
+            'nombre' => 'required|regex:/^[a-zA-Z\s]*$/|max:255',
+            'apellido' => 'required|regex:/^[a-zA-Z\s]*$/|max:255',
             'telefono' => 'required|integer|digits_between:9,10',
             'email' => 'required|email',
             'direccion' => 'required|max:255'
