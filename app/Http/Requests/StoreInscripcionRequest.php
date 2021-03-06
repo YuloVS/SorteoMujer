@@ -17,9 +17,9 @@ class StoreInscripcionRequest extends FormRequest
     {
         return [
             'dni' => 'digits_between:7,8|required|integer|unique:App\Models\Inscripcion,dni',
-            'nombre' => 'required|string',
-            'apellido' => 'required|string',
-            'telefono' => 'required|max:15',
+            'nombre' => 'required|alpha|max:255',
+            'apellido' => 'required|alpha|max:255',
+            'telefono' => 'required|integer|digits_between:9,10',
             'email' => 'required|email',
             'direccion' => 'required|string'
         ];
