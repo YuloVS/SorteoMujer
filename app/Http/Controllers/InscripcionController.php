@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreInscripcionRequest;
 use App\Models\Inscripcion;
-use Illuminate\Http\RedirectResponse;
 use Inertia\Controller;
 use Inertia\Inertia;
 use Inertia\Response;
 
 class InscripcionController extends Controller
 {
-    public function show()
-    : Response
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
     {
         return Inertia::render('Inscripcion');
     }
@@ -23,7 +26,6 @@ class InscripcionController extends Controller
      * verificando que no se registre mas de una vez una misma persona
      */
     public function store(StoreInscripcionRequest $request)
-    : RedirectResponse
     {
         if ($request->validated()) {
             $inscripcion = new Inscripcion();
@@ -32,9 +34,9 @@ class InscripcionController extends Controller
             $inscripcion->apellido = $request->apellido;
             $inscripcion->telefono = $request->telefono;
             $inscripcion->email = $request->email;
-            $inscripcion->direccion = $request->direccion;
             $inscripcion->save();
-            return back();
+            $numeroFormateado = number_format($inscripcion->id, 5, ".");
+            return $numeroFormateado;
         }
     }
 }

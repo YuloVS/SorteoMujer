@@ -27,10 +27,7 @@
         "vue-loader": "^16.1.2"
     },
     "dependencies": {
-<<<<<<< HEAD
         "node-sass": "^5.0.0",
         "sass-loader": "^11.0.1"
-=======
->>>>>>> main
     }
 }

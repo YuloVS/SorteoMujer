@@ -27,7 +27,6 @@ class InscripcionFactory extends Factory
             'apellido' => $this->faker->lastName,
             'telefono' => $this->faker->numberBetween(1000000000, 999999999999),
             'email' => $this->faker->unique()->safeEmail,
-            'direccion' => $this->faker->sentence(2),
         ];
     }
 }
