@@ -10,7 +10,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
-route::get('/', [InscripcionController::class, 'show']);
-route::post('/formulario', [InscripcionController::Class, 'store']);
+Route::get('/', [InscripcionController::class, 'show']);
+Route::post('/formulario', [InscripcionController::Class, 'store']);
 
-route::get('/sorteo', [SorteoController::class, 'realizarSorteo']);
+Route::get('/sorteo', [SorteoController::class, 'realizarSorteo']);
+
+Route::get('test', function(){ dd(\App\Models\Inscripcion::all()); });
