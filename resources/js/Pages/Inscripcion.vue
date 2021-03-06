@@ -27,6 +27,8 @@
                                    type="text"
                                    class="px-3 py-2 bg-gray-50 border-2 border-gray-300 rounded-md text-gray-700 focus:border-pink-500 focus:outline-none focus:ring-0"
                                    required
+                                   pattern="[a-zA-ZÁáÉéÍíÓóÚúÑ ñ]+"
+                                   title="Solo letras"
                             >
                             <span class="md:w-52 text-red-500" v-if="form.errors.nombre" v-text="form.errors.nombre"></span>
                         </div>
@@ -37,6 +39,8 @@
                                    type="text"
                                    class="px-3 py-2 bg-gray-50 border-2 border-gray-300 rounded-md text-gray-700 focus:border-pink-500 focus:outline-none focus:ring-0"
                                    required
+                                   pattern="[a-zA-ZÁáÉéÍíÓóÚúÑ ñ]+"
+                                   title="Solo letras"
                             >
                             <span class="md:w-52 text-red-500" v-if="form.errors.apellido" v-text="form.errors.apellido"></span>
                         </div>
@@ -61,7 +65,7 @@
                                    type="text"
                                    class="px-3 py-2 bg-gray-50 border-2 border-gray-300 rounded-md text-gray-700 focus:border-pink-500 focus:outline-none focus:ring-0"
                                    required
-                                   pattern="[a-zA-Z0-9 ]+"
+                                   pattern="[a-zA-Z0-9ÁáÉéÍíÓóÚúÑñ ]+"
                                    title="Solo letras y números"
                             >
                             <span class="md:w-52 text-red-500" v-if="form.errors.direccion" v-text="form.errors.direccion"></span>
