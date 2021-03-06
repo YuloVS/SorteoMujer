@@ -7,11 +7,13 @@ use Illuminate\Foundation\Http\FormRequest;
 class StoreInscripcionRequest extends FormRequest
 {
     public function authorize()
+    : bool
     {
         return true;
     }
 
     public function rules()
+    : array
     {
         return [
             'dni' => 'digits_between:7,8|required|integer|unique:App\Models\Inscripcion,dni',
@@ -19,31 +21,33 @@ class StoreInscripcionRequest extends FormRequest
             'apellido' => 'required|string',
             'telefono' => 'required|max:15',
             'email' => 'required|email',
-            'direccion' => 'required'
+            'direccion' => 'required|string'
         ];
     }
 
     public function messages()
+    : array
     {
         return [
-            'dni.digits_between' => 'El DNI ingresado debe contener entre 7 y 8 dígitos.',
+            'dni.digits_between' => 'Ingrese un DNI válido.',
             'dni.required' => 'Debe ingresar su DNI',
-            'dni.integer' => 'Debe ingresar solo números',
-            'dni.unique' => 'Ya existe una persona participando con éste DNI',
+            'dni.integer' => 'Ingrese un DNI válido.',
+            'dni.unique' => 'Esta persona ya está participando.',
 
-            'nombre.required' => 'Debe ingresar su nombre',
-            'nombre.string' => 'Debe ingresar solamente letras',
+            'nombre.required' => 'Debe ingresar su nombre.',
+            'nombre.string' => 'Debe ingresar solamente letras.',
 
-            'apellido.required' => 'Debe ingresar su apellido',
-            'apellido.string' => 'Debe ingresar solamente letras',
+            'apellido.required' => 'Debe ingresar su apellido.',
+            'apellido.string' => 'Debe ingresar solamente letras.',
 
-            'telefono.required' => 'Debe ingresar un número de contacto',
-            'telefono.max' => 'Debe ingresar un número válido',
+            'telefono.required' => 'Debe ingresar un número de contacto.',
+            'telefono.max' => 'Debe ingresar un número válido.',
 
-            'email.required' => 'Debe ingresar un mail de contacto',
-            'email.email' => 'Debe ingresar un mail válido',
+            'email.required' => 'Debe ingresar un email de contacto.',
+            'email.email' => 'Debe ingresar un email válido.',
 
-            'direccion.required' => 'Debe ingresar una dirección',
+            'direccion.required' => 'Debe ingresar una dirección.',
+            'direccion.string' => 'Ingrese solamente calle, número y barrio.',
             
         ];
     }

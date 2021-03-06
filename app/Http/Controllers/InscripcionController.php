@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreInscripcionRequest;
 use App\Models\Inscripcion;
+use Illuminate\Http\RedirectResponse;
 use Inertia\Controller;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -22,6 +23,7 @@ class InscripcionController extends Controller
      * verificando que no se registre mas de una vez una misma persona
      */
     public function store(StoreInscripcionRequest $request)
+    : RedirectResponse
     {
         if ($request->validated()) {
             $inscripcion = new Inscripcion();
@@ -32,8 +34,7 @@ class InscripcionController extends Controller
             $inscripcion->email = $request->email;
             $inscripcion->direccion = $request->direccion;
             $inscripcion->save();
-            //return view('a.la.vista.que.corresponda')->with($inscripcion->id);
-            return 'ud ha sido inscripto con el número: ' . $inscripcion->id;
+            return back();
         }
     }
 }

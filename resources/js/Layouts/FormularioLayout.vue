@@ -2,13 +2,9 @@
     <div>
         <jet-banner />
         <div class="flex flex-col bg-gray-50 h-screen">
-
-
-            <!-- Page Content -->
-            <main class="mb-auto mt-3">
+            <main class="mb-auto mt-auto">
                 <slot></slot>
             </main>
-
             <Footer></Footer>
         </div>
     </div>
@@ -33,25 +29,5 @@
             JetNavLink,
             JetResponsiveNavLink,
         },
-
-        data() {
-            return {
-                showingNavigationDropdown: false,
-            }
-        },
-
-        methods: {
-            switchToTeam(team) {
-                this.$inertia.put(route('current-team.update'), {
-                    'team_id': team.id
-                }, {
-                    preserveState: false
-                })
-            },
-
-            logout() {
-                this.$inertia.post(route('logout'));
-            },
-        }
     }
 </script>

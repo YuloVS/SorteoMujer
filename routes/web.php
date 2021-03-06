@@ -1,6 +1,5 @@
 <?php
 
-
 use App\Http\Controllers\InscripcionController;
 use App\Http\Controllers\SorteoController;
 use Illuminate\Support\Facades\Route;
@@ -11,7 +10,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
-route::get('/', [InscripcionController::Class, 'show']);
-route::post('/formulario', [InscripcionController::Class, 'store']);
+Route::get('/', [InscripcionController::class, 'show']);
+Route::post('/formulario', [InscripcionController::Class, 'store']);
 
-route::get('/sorteo', [SorteoController::Class, 'realizarSorteo']);
+Route::get('/sorteo', [SorteoController::class, 'realizarSorteo']);
+
+Route::get('test', function(){ dd(\App\Models\Inscripcion::all()->toArray()); });
