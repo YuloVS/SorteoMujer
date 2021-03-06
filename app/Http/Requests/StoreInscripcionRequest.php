@@ -17,11 +17,11 @@ class StoreInscripcionRequest extends FormRequest
     {
         return [
             'dni' => 'digits_between:7,8|required|integer|unique:App\Models\Inscripcion,dni',
-            'nombre' => 'required|regex:/^[a-zA-Z\s]*$/|max:255',
-            'apellido' => 'required|regex:/^[a-zA-Z\s]*$/|max:255',
+            'nombre' => 'required|regex:/[a-zA-ZÁáÉéÍíÓóÚúÑ ñ]+/|max:255',
+            'apellido' => 'required|regex:/[a-zA-ZÁáÉéÍíÓóÚúÑ ñ]+/|max:255',
             'telefono' => 'required|integer|digits_between:9,10',
             'email' => 'required|email',
-            'direccion' => 'required|max:255'
+            'direccion' => 'required|regex:/[a-zA-Z0-9ÁáÉéÍíÓóÚúÑñ ]+/|max:255'
         ];
     }
 
@@ -50,6 +50,7 @@ class StoreInscripcionRequest extends FormRequest
             'email.email' => 'Debe ingresar un email válido.',
 
             'direccion.required' => 'Debe ingresar una dirección.',
+            'direccion.regex' => 'Ingrese una dirección válida.',
             'direccion.max' => 'Ingrese solamente calle, número y barrio.',
 
         ];
