@@ -61,6 +61,8 @@
                                    type="text"
                                    class="px-3 py-2 bg-gray-50 border-2 border-gray-300 rounded-md text-gray-700 focus:border-pink-500 focus:outline-none focus:ring-0"
                                    required
+                                   pattern="[a-zA-Z0-9 ]+"
+                                   title="Solo letras y números"
                             >
                             <span class="md:w-52 text-red-500" v-if="form.errors.direccion" v-text="form.errors.direccion"></span>
                         </div>
