@@ -21,7 +21,7 @@ class StoreInscripcionRequest extends FormRequest
             'apellido' => 'required|alpha|max:255',
             'telefono' => 'required|integer|digits_between:9,10',
             'email' => 'required|email',
-            'direccion' => 'required|regex:[a-zA-Z0-9 ]+|max:255'
+            'direccion' => 'required|max:255'
         ];
     }
 
@@ -50,7 +50,6 @@ class StoreInscripcionRequest extends FormRequest
             'email.email' => 'Debe ingresar un email válido.',
 
             'direccion.required' => 'Debe ingresar una dirección.',
-            'direccion.regex' => 'Ingrese solamente calle, número y barrio.',
             'direccion.max' => 'Ingrese solamente calle, número y barrio.',
 
         ];
