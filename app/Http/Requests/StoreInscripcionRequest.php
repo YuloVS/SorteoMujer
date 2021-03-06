@@ -7,40 +7,51 @@ use Illuminate\Foundation\Http\FormRequest;
 class StoreInscripcionRequest extends FormRequest
 {
     public function authorize()
+    : bool
     {
         return true;
     }
 
     public function rules()
+    : array
     {
         return [
             'dni' => 'digits_between:7,8|required|integer|unique:App\Models\Inscripcion,dni',
-            'nombre' => 'required|string',
-            'apellido' => 'required|string',
-            'telefono' => 'required|max:15',
-            'email' => 'required|email'
+            'nombre' => 'required|regex:/^[a-zA-Z\s]*$/|max:255',
+            'apellido' => 'required|regex:/^[a-zA-Z\s]*$/|max:255',
+            'telefono' => 'required|integer|digits_between:9,10',
+            'email' => 'required|email',
+            'direccion' => 'required|max:255'
         ];
     }
 
     public function messages()
+    : array
     {
         return [
-            'dni.digits_between' => 'El DNI ingresado debe contener entre 7 y 8 dígitos.',
+            'dni.digits_between' => 'Ingrese un DNI válido.',
             'dni.required' => 'Debe ingresar su DNI',
-            'dni.integer' => 'Debe ingresar solo números',
-            'dni.unique' => 'Ya existe una persona participando con éste DNI',
+            'dni.integer' => 'Ingrese un DNI válido.',
+            'dni.unique' => 'Esta persona ya está participando.',
 
-            'nombre.required' => 'Debe ingresar su nombre',
-            'nombre.string' => 'Debe ingresar solamente letras',
+            'nombre.required' => 'Debe ingresar su nombre.',
+            'nombre.regex' => 'Ingrese un nombre válido.',
+            'nombre.max' => 'Ingrese un nombre válido.',
 
-            'apellido.required' => 'Debe ingresar su apellido',
-            'apellido.string' => 'Debe ingresar solamente letras',
+            'apellido.required' => 'Debe ingresar su apellido.',
+            'apellido.regex' => 'Ingrese un apellido válido.',
+            'apellido.max' => 'Ingrese un apellido válido.',
 
-            'telefono.required' => 'Debe ingresar un número de contacto',
-            'telefono.max' => 'Debe ingresar un número válido',
+            'telefono.required' => 'Debe ingresar un número de contacto.',
+            'telefono.integer' => 'Debe ingresar un número válido.',
+            'telefono.digits_between' => 'Debe ingresar un número válido.',
 
-            'email.required' => 'Debe ingresar un mail de contacto',
-            'email.email' => 'Debe ingresar un mail válido'
+            'email.required' => 'Debe ingresar un email de contacto.',
+            'email.email' => 'Debe ingresar un email válido.',
+
+            'direccion.required' => 'Debe ingresar una dirección.',
+            'direccion.max' => 'Ingrese solamente calle, número y barrio.',
+
         ];
     }
 }
