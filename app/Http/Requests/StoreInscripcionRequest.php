@@ -21,7 +21,7 @@ class StoreInscripcionRequest extends FormRequest
             'apellido' => 'required|alpha|max:255',
             'telefono' => 'required|integer|digits_between:9,10',
             'email' => 'required|email',
-            'direccion' => 'required|string'
+            'direccion' => 'required|alpha_num|max:255'
         ];
     }
 
@@ -35,20 +35,24 @@ class StoreInscripcionRequest extends FormRequest
             'dni.unique' => 'Esta persona ya está participando.',
 
             'nombre.required' => 'Debe ingresar su nombre.',
-            'nombre.string' => 'Debe ingresar solamente letras.',
+            'nombre.alpha' => 'Ingrese un nombre válido.',
+            'nombre.max' => 'Ingrese un nombre válido.',
 
             'apellido.required' => 'Debe ingresar su apellido.',
-            'apellido.string' => 'Debe ingresar solamente letras.',
+            'apellido.alpha' => 'Ingrese un apellido válido.',
+            'apellido.max' => 'Ingrese un apellido válido.',
 
             'telefono.required' => 'Debe ingresar un número de contacto.',
-            'telefono.max' => 'Debe ingresar un número válido.',
+            'telefono.integer' => 'Debe ingresar un número válido.',
+            'telefono.digits_between' => 'Debe ingresar un número válido.',
 
             'email.required' => 'Debe ingresar un email de contacto.',
             'email.email' => 'Debe ingresar un email válido.',
 
             'direccion.required' => 'Debe ingresar una dirección.',
-            'direccion.string' => 'Ingrese solamente calle, número y barrio.',
-            
+            'direccion.alpha_num' => 'Ingrese solamente calle, número y barrio.',
+            'direccion.max' => 'Ingrese solamente calle, número y barrio.',
+
         ];
     }
 }
