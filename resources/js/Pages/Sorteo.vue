@@ -141,7 +141,7 @@ export default {
   text-transform: uppercase;
   color: #fe0070;
   font-family: Verdana, sans-serif;
-  font-size: 4em;
+  font-size: 7em;
   font-weight: bold;
   text-align: left;
   text-shadow: 0.08em 0em #c0bcbbc7;

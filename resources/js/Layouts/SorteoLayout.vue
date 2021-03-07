@@ -72,12 +72,12 @@
                 </div>
             </nav>
 
-            <!-- Page Content -->
-            <main>
-                <slot></slot>
-            </main>
-
-            <Footer></Footer>
+	        <div class="flex flex-col bg-gray-50 h-screen">
+		        <main class="mb-auto mt-auto">
+			        <slot></slot>
+		        </main>
+		        <Footer></Footer>
+	        </div>
         </div>
     </div>
 </template>
@@ -109,14 +109,6 @@
         },
 
         methods: {
-            switchToTeam(team) {
-                this.$inertia.put(route('current-team.update'), {
-                    'team_id': team.id
-                }, {
-                    preserveState: false
-                })
-            },
-
             logout() {
                 this.$inertia.post(route('logout'));
             },
