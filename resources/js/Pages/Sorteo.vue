@@ -1,7 +1,7 @@
 <template>
 	<SorteoLayout>
 		<div class="flex justify-center mt-2 mb-auto ">
-			<div class="bg-gray-50 rounded mb-4 p-4">
+			<div class="bg-gray-50 rounded mb-4 p-4 w-full">
 				<img class="h-80 max-h-full" v-bind:src=" '/img/DíaDeLaMujer.svg' " alt="">
 
 				<hr class="bg-pink-600" style="height:2px;border-width:0">
@@ -64,7 +64,8 @@ export default {
         submit() {
 	        axios.post("/sorteo").then((res) => {
 	            let ganador = res.data
-		        this.ganador = ganador.nombre + " " + ganador.apellido + " - " + ganador.dni
+		        console.log(ganador.dni.toString().slice(ganador.dni.toString().length - 4))
+		        this.ganador = ganador.nombre + " " + ganador.apellido + " - " + ganador.dni.toString().slice(ganador.dni.toString().length - 4)
 		        this.start();
 	        })
         },
