@@ -2,19 +2,15 @@
 	<SorteoLayout>
 		<div class="flex justify-center mt-2 mb-auto ">
 			<div class="bg-gray-50 rounded mb-4 p-4 w-full">
-				<img class="h-80 max-h-full" v-bind:src=" '/img/DíaDeLaMujer.svg' " alt="">
+				<img class="h-80 max-h-full mx-auto" v-bind:src=" '/img/DíaDeLaMujer.svg' " alt="">
 
 				<hr class="bg-pink-600" style="height:2px;border-width:0">
 
-				<h2 class="text-4xl font-bold text-center mx-auto text-black mt-2 ">Bienvenidos al Sorteo </h2>
+				<h2 class="text-6xl font-bold text-center mx-auto text-black mt-7">Bienvenidos al Sorteo </h2>
 
-				<div class="flex flex-row mx-auto lg:pl-64 opacity-75 mt-2 mb-4 p-5">
-					<div class="text-2xl font-bold text-center text-black mb-2 mt-4">
-						Mucha Suerte!
-					</div>
-					<div class="">
-						<img class="w-12 ml-8" v-bind:src="'/img/Suerte.svg'" alt="">
-					</div>
+				<div class="text-4xl font-bold text-center mx-auto text-black mt-5 mb-7">
+					Mucha Suerte!
+					<img class="w-12 ml-8 inline" v-bind:src="'/img/Suerte.svg'" alt="">
 				</div>
 
 				<hr class="bg-pink-600" style="height:2px;border-width:0">
@@ -51,7 +47,7 @@ export default {
     data() {
         return {
             show: false,
-	        ganador: null
+            ganador: null
         }
     },
 
@@ -62,12 +58,12 @@ export default {
 
     methods: {
         submit() {
-	        axios.post("/sorteo").then((res) => {
-	            let ganador = res.data
-		        console.log(ganador.dni.toString().slice(ganador.dni.toString().length - 4))
-		        this.ganador = ganador.nombre + " " + ganador.apellido + " - " + ganador.dni.toString().slice(ganador.dni.toString().length - 4)
-		        this.start();
-	        })
+            axios.post("/sorteo").then((res) => {
+                let ganador = res.data
+                console.log(ganador.dni.toString().slice(ganador.dni.toString().length - 4))
+                this.ganador = ganador.nombre + " " + ganador.apellido + " - " + ganador.dni.toString().slice(ganador.dni.toString().length - 4)
+                this.start();
+            })
         },
         start() {
             let boton = document.getElementById("botonSorteo");
