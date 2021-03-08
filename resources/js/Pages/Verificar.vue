@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <ModalVerificacion  :show="show" :verificar="verificar"/>
+        <ModalVerificacion  :show="show" :ganador="ganador" @close="close"/>
 
     </FormularioLayout>
 </template>
@@ -59,8 +59,7 @@ export default {
     data() {
         return {
             show: false,
-            verificar: true,
-            premio: null,
+            ganador: null,
                 form: this.$inertia.form ({
                     dni: null,
             }),
@@ -73,14 +72,17 @@ export default {
             this.show = true
         },
 
-        submit(dni) {
-            this.form.get('/control/' + dni, {
-                preserveScroll: true,
-                onSuccess: () => {
-                    this.form.reset();
-                }
+        submit() {
+            axios.post("/verificar", { dni: this.form.dni }).then((res) => {
+                this.ganador = res.data
+	            console.log(this.ganador)
+                this.abrirModal()
             })
         },
+
+	    close() {
+            this.show = false
+	    }
     },
 }
 </script>
