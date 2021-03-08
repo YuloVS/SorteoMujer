@@ -1,5 +1,6 @@
 <template>
-	<Modal :show="show">
+	<Modal :show="show" :closeable="closeable" @close="close">
+        
         <div v-if="verificar == true">
             <div class="px-4 bg-gray-50">
 			    <img class="w-76 mx-auto" v-bind:src = "'/img/Celebration.gif'" alt="">
@@ -29,11 +30,13 @@
 		    </div>
         </div>
 
+
+
         <div v-else>
             <div class="p-4 bg-gray-50">
-			    <img class="w-full mx-auto" v-bind:src = "'/img/Celebration.gif'" alt="">
-                <h1 class="text-4xl md:text-5xl text-center font-extrabold">En esta oportunidad no ganaste, pero sigue intentando! </h1>
-                <!--<h1 class="text-4xl md:text-5xl text-center font-extrabold mb-5" v-text="ganador"></h1>-->
+			    <img class="w-76 mx-auto" v-bind:src = "'/img/perder.gif'" alt="">
+                <h1 class="text-4xl md:text-5xl text-center font-extrabold pb-4">No ganaste ningún premio, suerte la próxima vez</h1>
+                
 		    </div>
         </div>
 
@@ -45,12 +48,22 @@ import Modal from "@/Jetstream/Modal";
 export default {
     name: "ModalGanador",
 
+    emits: ['close'],
     components: {Modal},
 
 	props: {
         show: false,
 		ganador: null,
         verificar: null,
+        closeable: {
+                default: true
+        },
 	},
+
+    methods: {
+        close() {
+                this.$emit('close')
+            },
+    }
 }
 </script>

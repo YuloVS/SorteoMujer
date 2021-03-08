@@ -61,7 +61,6 @@ export default {
             show: false,
             verificar: true,
             premio: null,
-
                 form: this.$inertia.form ({
                     dni: null,
             }),
