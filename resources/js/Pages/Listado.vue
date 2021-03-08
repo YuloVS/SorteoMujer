@@ -71,7 +71,7 @@
                                     <div class="text-sm text-gray-900">{{ row.email}}</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">Premio</div>
+                                    <div class="text-sm text-gray-900">{{ row.premio}}</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
                                     <div class="text-sm text-gray-900">Reclamado</div>
