@@ -15,7 +15,7 @@ class SorteoController extends Controller
     /*
      *  Método que realiza el sorteo y registra al ganador,
      *  asigna el nro del sorteo al campo 'ganador' del registro de la persona
-     
+
     public function realizarSorteo()
     {
         $participantes = Inscripcion::whereGanador(0)->get();
@@ -55,28 +55,30 @@ class SorteoController extends Controller
     {
         $premio = "No bro, no ganaste nada";
         return Inertia::render('Control', ['premio' => $premio]);
+    }
+
     public function realizarSorteo()
-    {       
-        $ganadores = [];
-        for($i=0; $i<30; $i++)
         {
-            $premiosDisponibles = Producto::where('cantidad', '>', 0)->get();
-            $participantes = Inscripcion::whereGanador(0)->get();
-
-            if((!($premiosDisponibles->isEmpty())) && (!($participantes->isEmpty())))
+            $ganadores = [];
+            for($i=0; $i<30; $i++)
             {
-                
-                $premio = $premiosDisponibles->random();
-                $ganador = $participantes->random();
-                
-                $ganadores[$i] = ["nombre" => $ganador->nombre, "apellido" => $ganador->apellido, "dni" =>$ganador->dni, "producto_id" =>$premio->id];
-                $premio->cantidad = ($premio->cantidad) - 1;
-                $premio->save();
-                $ganador->producto_id = $premio->id;
+                $premiosDisponibles = Producto::where('cantidad', '>', 0)->get();
+                $participantes = Inscripcion::whereGanador(0)->get();
 
-                $ganador->ganador = 1;
-                $ganador->save();
-            } 
-        };
+                if((!($premiosDisponibles->isEmpty())) && (!($participantes->isEmpty())))
+                {
+
+                    $premio = $premiosDisponibles->random();
+                    $ganador = $participantes->random();
+
+                    $ganadores[$i] = ["nombre" => $ganador->nombre, "apellido" => $ganador->apellido, "dni" =>$ganador->dni, "producto_id" =>$premio->id];
+                    $premio->cantidad = ($premio->cantidad) - 1;
+                    $premio->save();
+                    $ganador->producto_id = $premio->id;
+
+                    $ganador->ganador = 1;
+                    $ganador->save();
+                }
+            };
     }
 }
