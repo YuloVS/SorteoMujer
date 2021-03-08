@@ -21,7 +21,7 @@ export default {
     components: {Modal},
 	props: {
         show: false,
-		ganador: null
+		ganadores: null
 	},
 }
 </script>

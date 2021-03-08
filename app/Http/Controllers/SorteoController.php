@@ -7,6 +7,7 @@ use App\Models\Inscripcion;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class SorteoController extends Controller
 {
@@ -25,16 +26,15 @@ class SorteoController extends Controller
     }
 
     public function show()
+    : Response
     {
-        return Inertia::render('Sorteo', [
-            "participantes" => Inscripcion::elegibles(),
-        ]);
+        return Inertia::render('Sorteo');
     }
 
     public function ganadores()
+    : Response
     {
         $ganadores = Inscripcion::where('ganador', '>',  0)->orderby('ganador','asc')->get();
-//        dd($ganadores);
         return Inertia::render('Listado', ['ganadores' => $ganadores]);
     }
 }
