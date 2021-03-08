@@ -51,7 +51,7 @@ class SorteoController extends Controller
 
             if((!($premiosDisponibles->isEmpty())) && (!($participantes->isEmpty())))
             {
-                
+               
                 $premio = $premiosDisponibles->random();
                 $ganador = $participantes->random();               
                 
