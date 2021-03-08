@@ -15,7 +15,7 @@ Route::get('/', [InscripcionController::class, 'show']);
 Route::post('/formulario', [InscripcionController::Class, 'store']);
 
 Route::get('/verificar', function() { return Inertia::render('Verificar'); })->name("verificar");
-Route::post('/verificando', [SorteoController::class, 'verificando'])->name("verificando");
+Route::post('/verificar', [ProductosController::class, 'consultarPremio'])->name("verificando");
 
 
 Route::post('/sorteo', [SorteoController::class, 'realizarSorteo'])->middleware('auth');
@@ -28,7 +28,7 @@ Route::get('test', function(){ dd(\App\Models\Inscripcion::all()->toArray()); })
 
 //Route::get('/ganadores', [SorteoController::class, 'ganadores']);
 
-Route::get('/buscarPorDni/{dni}', [ProductosController::class, 'buscarPremio']);
+//Route::get('/buscarPorDni/{dni}', [ProductosController::class, 'buscarPremio']);
 
 //Route::inertia('/sorteos', 'Sorteo');
 //Route::inertia('/sorteos', 'Sorteo');
