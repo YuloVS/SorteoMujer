@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\prodcutos;
+use App\Models\Producto;
+use App\Models\productos;
+use App\Models\Inscripcion;
 use Illuminate\Http\Request;
 
-class ProdcutosController extends Controller
+class ProductosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -81,5 +83,21 @@ class ProdcutosController extends Controller
     public function destroy(prodcutos $prodcutos)
     {
         //
+    }
+
+    public function buscarPremio($dni)
+    {
+        $persona = Inscripcion::where('dni', $dni)->first();
+        if($persona->producto_id != 0)
+        {
+            $premio = Producto::where('id', $persona->producto_id);
+            return [$persona, $premio];
+        }
+        else
+        {
+            return 'no gano ningùn premio';
+        }
+
+
     }
 }
