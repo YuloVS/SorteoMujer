@@ -18,4 +18,5 @@ Route::get('/sorteos', [SorteoController::class, 'show'])->middleware('auth');
 
 Route::get('test', function(){ dd(\App\Models\Inscripcion::all()->toArray()); })->middleware('auth');
 
+Route::get('/ganadores', [SorteoController::class, 'ganadores']);
 //Route::inertia('/sorteos', 'Sorteo');
