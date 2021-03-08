@@ -8,7 +8,6 @@ use App\Models\Inscripcion;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\StoreInscripcionRequest;
-use Inertia\Inertia;
 use Inertia\Response;
 
 class SorteoController extends Controller

@@ -46,7 +46,7 @@ class ProductosController extends Controller
      * @param  \App\Models\prodcutos  $prodcutos
      * @return \Illuminate\Http\Response
      */
-    public function show(prodcutos $prodcutos)
+    public function show(productos $productos)
     {
         //
     }
@@ -87,17 +87,17 @@ class ProductosController extends Controller
 
     public function buscarPremio($dni)
     {
-        $persona = Inscripcion::where('dni', $dni)->first();
-        if($persona->producto_id != 0)
+        $persona = Inscripcion::where('dni', $dni)
+            ->where('producto_id', '!=', 0)
+            ->first();
+        if($persona != null)
         {
             $premio = Producto::where('id', $persona->producto_id);
             return [$persona, $premio];
         }
         else
         {
-            return 'no gano ningùn premio';
+            return 'no gano ningun premio';
         }
-
-
     }
 }
