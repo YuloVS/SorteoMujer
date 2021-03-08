@@ -34,7 +34,22 @@ class SorteoController extends Controller
     public function ganadores()
     {
         $ganadores = Inscripcion::where('ganador', '>',  0)->orderby('ganador','asc')->get();
-//        dd($ganadores);
         return Inertia::render('Listado', ['ganadores' => $ganadores]);
+    }
+
+    public function productos()
+    {
+        return Inertia::render('Productos');
+    }
+
+    public function verificar()
+    {
+        return Inertia::render('Verificar');
+    }
+
+    public function control()
+    {
+        $premio = "No bro, no ganaste nada";
+        return Inertia::render('Control', ['premio' => $premio]);
     }
 }
