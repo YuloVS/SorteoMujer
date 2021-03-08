@@ -119,6 +119,7 @@ export default {
         },
     },
 	mounted() {
+        console.log("mee monté")
         this.ganador = null
     }
 }
