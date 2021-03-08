@@ -12,6 +12,8 @@ class ProductosController extends Controller
         $persona = Inscripcion::whereDni($request->dni)->where('producto_id', '<>', 0)->with('producto')->first();
         if($persona)
         {
+            $persona->verificado = 1;
+            $persona->save();
             return $persona->toArray();
         }
         return null;
