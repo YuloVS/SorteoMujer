@@ -28,18 +28,16 @@
 
                     </div>
                     <div class="flex justify-center mt-6">
-                        <button @submit="this.form.dni" class="px-3 py-2 bg-pink-600 text-gray-50 text-base font-semibold uppercase rounded-lg hover:bg-pink-500 focus:outline-none focus:ring-0">
+                        <button @click="abrirModal()" class="px-3 py-2 bg-pink-600 text-gray-50 text-base font-semibold uppercase rounded-lg hover:bg-pink-500 focus:outline-none focus:ring-0">
                             Verificar
                         </button>
                     </div>
                 </form>
             </div>
         </div>
-        <Modal :max-width="'sm'" :show="form.recentlySuccessful">
-            <div class="p-4 bg-gray-50">
-                <img class="w-80 mx-auto" v-bind:src = "'/img/Ok.svg'" alt="">
-            </div>
-        </Modal>
+
+        <ModalVerificacion  :show="show" :verificar="verificar"/>
+
     </FormularioLayout>
 </template>
 
@@ -47,26 +45,35 @@
 <script>
 import FormularioLayout from "@/Layouts/FormularioLayout";
 import Label from "@/Jetstream/Label";
-import Modal from "@/Jetstream/Modal";
+import ModalVerificacion from "@/Pages/Componentes/ModalVerificacion";
+
 export default {
     components: {
-        Modal,
         Label,
         FormularioLayout,
+        ModalVerificacion,
     },
 
     props: ['premio'],
 
     data() {
         return {
-            form: this.$inertia.form ({
-                dni: null,
-            }),
+            show: false,
+            verificar: true,
             premio: null,
+
+                form: this.$inertia.form ({
+                    dni: null,
+            }),
         }
     },
 
     methods: {
+
+        abrirModal () {
+            this.show = true
+        },
+
         submit(dni) {
             this.form.get('/control/' + dni, {
                 preserveScroll: true,
