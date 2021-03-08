@@ -2,6 +2,7 @@
     <FormularioLayout>
         <div class="flex justify-center mt-2 mb-auto">
             <div class="shadow-lg rounded mb-4 p-4">
+	            <h5 class="text-md font-bold text-center mx-auto text-red-600 mb-2">Inscripciones cerradas</h5>
                 <img class="w-72 mx-auto " v-bind:src = "'/img/DíaDeLaMujer.svg'" alt="">
                 <h1 class="text-4xl font-bold text-center mx-auto text-black mb-2">Comprobá si ganaste</h1>
                 <!--<p class="text-gray-400 text-base font-medium text-center mx-auto mb-8">-</p>-->

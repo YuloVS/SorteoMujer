@@ -11,7 +11,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
-Route::get('/', [InscripcionController::class, 'show']);
+//Route::get('/', [InscripcionController::class, 'show']);
+Route::get('/', function() { return redirect('/verificar');});
 Route::post('/formulario', [InscripcionController::Class, 'store']);
 
 Route::get('/verificar', function() { return Inertia::render('Verificar'); })->name("verificar");
