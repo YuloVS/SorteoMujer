@@ -52,7 +52,6 @@ class SorteoController extends Controller
 
             if((!($premiosDisponibles->isEmpty())) && (!($participantes->isEmpty())))
             {
-
                 $premio = $premiosDisponibles->random();
                 $ganador = $participantes->random();
 
@@ -66,6 +65,12 @@ class SorteoController extends Controller
                 $ganadores[$i] = ["nombre" => $ganador->nombre, "apellido" => $ganador->apellido, "dni" =>$ganador->dni, "producto" =>$premio->descripcion];
             } 
         }
+        return $ganadores;
+    }
+
+    public function ganadoresProductos()
+    {
+        $ganadores = Inscripcion::where("ganador", "<>", 0)->with("producto")->get();
         return $ganadores;
     }
 }
