@@ -16,6 +16,8 @@ Route::post('/formulario', [InscripcionController::Class, 'store']);
 Route::post('/sorteo', [SorteoController::class, 'realizarSorteo'])->middleware('auth');
 Route::get('/sorteos', [SorteoController::class, 'show'])->middleware('auth');
 
+Route::get('/listado', [SorteoController::class, 'listado'])->middleware('auth');
+
 Route::get('test', function(){ dd(\App\Models\Inscripcion::all()->toArray()); })->middleware('auth');
 
 //Route::inertia('/sorteos', 'Sorteo');

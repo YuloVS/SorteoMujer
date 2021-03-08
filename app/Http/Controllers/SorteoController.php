@@ -30,4 +30,9 @@ class SorteoController extends Controller
             "participantes" => Inscripcion::elegibles(),
         ]);
     }
+
+    public function listado()
+    {
+        return Inertia::render('Listado');
+    }
 }
