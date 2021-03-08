@@ -35,4 +35,9 @@ class Inscripcion extends Model
     {
         $this->attributes['direccion'] = strtoupper($value);
     }
+
+    public static function elegibles()
+    {
+        return self::whereGanador(0)->get();
+    }
 }

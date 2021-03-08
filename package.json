@@ -27,5 +27,8 @@
         "vue-loader": "^16.1.2"
     },
     "dependencies": {
+        "node-sass": "^5.0.0",
+        "sass-loader": "^11.0.1",
+        "style-loader": "^2.0.0"
     }
 }
