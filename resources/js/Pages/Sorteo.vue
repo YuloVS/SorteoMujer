@@ -51,6 +51,7 @@ export default {
         submit() {
             axios.post("/sorteo").then((res) => {
                 let ganadores = res.data
+	            this.show = true
                 // this.ganador = ganador.nombre + " " + ganador.apellido + " - " + ganador.dni.toString().slice(ganador.dni.toString().length - 4)
             })
         },
