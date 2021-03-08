@@ -6,18 +6,15 @@
                 <h1 class="text-4xl font-bold text-center mx-auto text-black mb-2">Ganadores</h1>
                 <div class="shadow overflow-hidden border-b border-gray-200 rounded-lg">
 
-                    <div v-if="false">
+                    <div v-if="this.ganadores.length === 0">
                         <!-- This example requires Tailwind CSS v2.0+ -->
                         <div class="bg-navbar">
-                            <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+                            <div class=" mx-auto py-3 px-3 sm:px-6 lg:px-8">
                                 <div class="flex items-center justify-between flex-wrap">
 
-                                    <div class="w-0 flex-1 flex items-center">
-                                            <span class="flex p-2 rounded-lg">
-                                                <i class="text-3xl h-14 w-14 text-white fas fa-user-times"></i>
-                                            </span>
-                                        <p class="ml-3 text-2xl font-medium text-white">
-                                            No se encontraron resultados
+                                    <div class="flex-1 flex items-center">
+                                        <p class="ml-3 text-2xl font-medium">
+                                            Todavía no se ha realizado ningún sorteo.
                                         </p>
                                     </div>
 
@@ -31,7 +28,7 @@
                             <thead class="bg-navbar text-center bg-pink-500">
                             <tr>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Nro de ganador
+                                    Sorteo
                                 </th>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
                                     Participante
@@ -53,24 +50,24 @@
                             </thead>
 
                             <tbody class="bg-white divide-y divide-gray-200">
-                            <tr  class="border-b hover:bg-pink-100">
+                            <tr v-for="row in this.ganadores" class="border-b hover:bg-pink-100">
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900"> {{ row.ganador}}Nro</div>
+                                    <div class="text-sm text-gray-900"> {{ row.ganador}}</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">{{ row.apellido }}apellido</div>
-                                    <div class="text-sm text-gray-500">{{ row.nombre }}nombre</div>
+                                    <div class="text-sm text-gray-900">{{ row.apellido }}</div>
+                                    <div class="text-sm text-gray-500">{{ row.nombre }}</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900"> {{ row.dni}}dnidnidni</div>
+                                    <div class="text-sm text-gray-900"> {{ row.dni}}</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">{{ row.telefono}}telefono</div>
-                                    <div class="text-sm text-gray-500">{{ row.direccion}}direcciondirecciondirecciondireccion</div>
+                                    <div class="text-sm text-gray-900">{{ row.telefono}}</div>
+                                    <div class="text-sm text-gray-500">{{ row.direccion}}</div>
                                 </th>
 
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">{{ row.email}}emailemailemailemailemail</div>
+                                    <div class="text-sm text-gray-900">{{ row.email}}</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
                                     <div class="text-sm text-gray-900"></div>
@@ -99,6 +96,10 @@ export default {
         Label,
     },
 
+    props:{
+        ganadores:null
+    },
+
     data() {
         return {
             row: {
@@ -109,19 +110,10 @@ export default {
                 direccion: null,
                 email : null,
             },
-            form: this.$inertia.form ({
-                dni: null,
-                nombre: null,
-                apellido: null,
-                telefono : null,
-                direccion: null,
-                email : null,
-            }),
         }
     },
-
-    methods: {
-
-    },
+    mounted() {
+        console.log(this.ganadores)
+    }
 }
 </script>
