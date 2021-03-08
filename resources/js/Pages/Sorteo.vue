@@ -6,10 +6,11 @@
 
 				<hr class="bg-pink-600" style="height:2px;border-width:0">
 
-				<h2 class="text-6xl font-bold text-center mx-auto text-black mt-7">Bienvenidos al Sorteo </h2>
+				<h2 class="text-6xl font-bold text-center mx-auto text-black mt-7 uppercase">Bienvenidos al Sorteo </h2>
 
-				<div class="text-4xl font-bold text-center mx-auto text-black mt-5 mb-7">
-					Mucha Suerte!
+				<div class="text-4xl font-bold text-center mx-auto text-black mt-5 mb-7 uppercase">
+					<img class="w-12 mr-8 inline" v-bind:src="'/img/Suerte.svg'" alt="">
+					¡Mucha Suerte!
 					<img class="w-12 ml-8 inline" v-bind:src="'/img/Suerte.svg'" alt="">
 				</div>
 
@@ -23,13 +24,7 @@
 					<div id="output"></div>
 				</div>
 
-				<ModalGanador :max-width="'md'" :show="show" @close="closeModal">
-					<h1 class="text-4xl font-bold text-center mx-auto text-black mb-2">FELICIDADES !! </h1>
-					<h3 class="text-4xl font-bold text-center mx-auto text-black mb-2"> Maria perez </h3>
-					<div class="p-4 bg-gray-50">
-						<img class="w-80 mx-auto" v-bind:src="'/img/Ok.svg'" alt="">
-					</div>
-				</ModalGanador>
+				<ModalGanador :show="show" :ganador="ganador"/>
 
 			</div>
 		</div>
@@ -37,8 +32,8 @@
 </template>
 
 <script>
-import ModalGanador from "@/Jetstream/ModalGanador";
 import SorteoLayout from "@/Layouts/SorteoLayout";
+import ModalGanador from "@/Pages/Componentes/ModalGanador";
 
 export default {
     props: {
@@ -68,6 +63,7 @@ export default {
         start() {
             let boton = document.getElementById("botonSorteo");
             boton.style.display = "none";
+            var vue = this
 
             let theLetters = "abcdefghijklmnopqrstuvwxyz123456789"; //You can customize what letters it will cycle through
             let ctnt = this.ganador; // Your text goes here
@@ -87,13 +83,14 @@ export default {
                         if (--i) {
                             rustle(i);
                         }
+                        else
+                            vue.show = true
                         nextFrame(i);
                         si = si + 1;
                     },
                     speed);
             })
             (clen * increment + 1);
-
 
             function nextFrame(pos) {
                 for (let i = 0; i < clen - stri; i++) {
@@ -121,14 +118,6 @@ export default {
             }
 
 
-        },
-
-        abrirModal() {
-            this.show = true
-        },
-
-        closeModal() {
-            this.show = false
         },
     }
 }

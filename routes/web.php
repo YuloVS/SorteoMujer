@@ -13,8 +13,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/', [InscripcionController::class, 'show']);
 Route::post('/formulario', [InscripcionController::Class, 'store']);
 
-Route::post('/sorteo', [SorteoController::class, 'realizarSorteo']);
-Route::get('/sorteos', [SorteoController::class, 'show']);
+Route::post('/sorteo', [SorteoController::class, 'realizarSorteo'])->middleware('auth');
+Route::get('/sorteos', [SorteoController::class, 'show'])->middleware('auth');
 
 Route::get('test', function(){ dd(\App\Models\Inscripcion::all()->toArray()); })->middleware('auth');
 
