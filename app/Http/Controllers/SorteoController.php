@@ -21,14 +21,13 @@ class SorteoController extends Controller
         $ganador = $participantes->random();
         $ganador->ganador = $nroDeSorteo;
         $ganador->save();
-//        return back()->with(compact($ganador));
         return $ganador;
     }
 
     public function show()
     {
         return Inertia::render('Sorteo', [
-            "participantes" => Inscripcion::elegibles()
+            "participantes" => Inscripcion::elegibles(),
         ]);
     }
 }

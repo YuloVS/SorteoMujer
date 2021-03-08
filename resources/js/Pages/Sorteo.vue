@@ -116,9 +116,10 @@ export default {
                 x.innerHTML = (fixed + block);
                 block = "";
             }
-
-
         },
+    },
+	mounted() {
+        this.ganador = null
     }
 }
 </script>
