@@ -67,4 +67,10 @@ class SorteoController extends Controller
         }
         return $ganadores;
     }
+
+    public function ganadoresProductos()
+    {
+        $ganadores = Inscripcion::where("ganador", "<>", 0)->with("producto")->get();
+        return $ganadores;
+    }
 }
