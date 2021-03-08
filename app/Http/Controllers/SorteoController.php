@@ -21,7 +21,7 @@ class SorteoController extends Controller
     public function ganadores()
     : Response
     {
-        $ganadores = Inscripcion::where('ganador', '>',  0)->orderby('ganador','asc')->get();
+        $ganadores = Inscripcion::where('ganador', '>',  0)->with('producto')->orderby('ganador','asc')->get();
         return Inertia::render('Listado', ['ganadores' => $ganadores]);
     }
 
@@ -38,7 +38,7 @@ class SorteoController extends Controller
     
     public function realizarSorteo()
     : array
-    {       
+    {
         $ganadores = [];
         for($i=0; $i<30; $i++)
         {
