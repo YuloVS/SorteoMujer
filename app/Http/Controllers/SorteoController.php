@@ -27,7 +27,9 @@ class SorteoController extends Controller
 
     public function productos()
     {
-        return Inertia::render('Productos');
+        return Inertia::render('Productos', [
+            "productos" => Producto::all()
+        ]);
     }
 
     public function control()
