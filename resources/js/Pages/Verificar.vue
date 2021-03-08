@@ -35,26 +35,11 @@
                 </form>
             </div>
         </div>
-        <div v-if="premio !== null">
-            <Modal :max-width="'sm'" :show="true">
-                <div class="p-4 bg-gray-50">
-                    <h1 class="text-4xl font-bold text-center mx-auto text-black mb-2">
-                        Suerte para la proxima bro
-                    </h1>
-                </div>
-            </Modal>
-        </div>
-        <div v-else="">
-            <Modal :max-width="'sm'" :show="true">
-                <div class="p-4 bg-gray-50">
-                    <h1 class="text-4xl font-bold text-center mx-auto text-black mb-2">
-                        Felicitaciones
-                    </h1>
-                </div>
-            </Modal>
-        </div>
-
-
+        <Modal :max-width="'sm'" :show="form.recentlySuccessful">
+            <div class="p-4 bg-gray-50">
+                <img class="w-80 mx-auto" v-bind:src = "'/img/Ok.svg'" alt="">
+            </div>
+        </Modal>
     </FormularioLayout>
 </template>
 
