@@ -14,14 +14,9 @@
                     <div><p class="text-xl md:text-2xl text-left font-extrabold text-pink-500 md:ml-4" v-text="ganador.producto.descripcion"></p></div>
                 </div>
 
-                <div class="flex md:flex-row flex-col px-6">
+                <div class="flex flex-col px-6">
                     <div><p class="text-left text-xl md:text-2xl  font-extrabold ">Podes retirarlo en:</p></div>
-                    <div><p class="text-xl md:text-2xl text-left font-extrabold text-pink-500 md:ml-4" v-text="ganador.producto.lugar"></p></div>
-                </div>
-
-                <div class="flex md:flex-row flex-col px-6">
-                    <div><p class="text-left text-xl md:text-2xl  font-extrabold ">En el siguiente horario: </p></div>
-                    <div><p class="text-xl md:text-2xl text-left font-extrabold text-pink-500 md:ml-4">08:00 a 13:00 horas</p></div>
+                    <div><p class="text-xl md:text-2xl text-left font-extrabold text-pink-500" v-text="ganador.producto.lugar + ' de 8 a 13 hs'"></p></div>
                 </div>
 
                 <hr class="bg-pink-600 mt-3" style="height:2px;border-width:0">
