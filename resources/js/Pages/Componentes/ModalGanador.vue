@@ -7,125 +7,9 @@
                 <img class="w-12 ml-6 inline" v-bind:src="'/img/fuegos-artificiales2.svg'" alt="">
             </div>
             <div class="grid grid-cols-3 gap-2 ml-10">
-                <div class="flex flex-row">
+                <div class="flex flex-row" v-for="ganador in ganadores">
                     <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
                     <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Secadora de cabello</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Parlante</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Bicicleta de dama</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Horno</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Juguera</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Licuadora</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Secarropa</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Heladera</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Exprimidora</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Sandwichera</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Ventilador</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Cafetera</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Pava eléctrica</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Planchita</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Tablet</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Secadora de cabello</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Parlante</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Bicicleta de dama</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Horno</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Juguera</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Licuadora</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Secarropa</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Heladera</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Exprimidora</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Sandwichera</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Ventilador</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Cafetera</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Pava eléctrica</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Planchita</h1>
-                </div>
-                <div class="flex flex-row">
-                    <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4">Paulina Belén Fernandez Colombo - 0607 - Tablet</h1>
                 </div>
             </div>
 			<inertia-link :href="'/sorteos'" preserve-scroll class="flex">
@@ -146,5 +30,8 @@ export default {
         show: false,
 		ganadores: null
 	},
+	mounted() {
+        console.log(this.ganadores)
+    }
 }
 </script>
