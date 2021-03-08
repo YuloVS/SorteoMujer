@@ -24,7 +24,7 @@
 					<div class="flex text-6xl" id="output" v-if="ganador"></div>
 				</div>
 
-				<ModalGanador :show="show" :ganador="ganador"/>
+				<ModalGanador :show="true" :ganador="ganador"/>
 
 			</div>
 		</div>
