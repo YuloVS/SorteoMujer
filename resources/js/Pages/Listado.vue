@@ -28,9 +28,6 @@
                             <thead class="bg-navbar text-center bg-pink-500">
                             <tr>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Sorteo
-                                </th>
-                                <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
                                     Participante
                                 </th>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
@@ -44,16 +41,16 @@
                                 </th>
 
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-
+                                    Premio
+                                </th>
+                                <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
+                                    Estado
                                 </th>
                             </tr>
                             </thead>
 
                             <tbody class="bg-white divide-y divide-gray-200">
                             <tr v-for="row in this.ganadores" class="border-b hover:bg-pink-100">
-                                <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900"> {{ row.ganador}}</div>
-                                </th>
                                 <th class="text-left p-3 px-5">
                                     <div class="text-sm text-gray-900">{{ row.apellido }}</div>
                                     <div class="text-sm text-gray-500">{{ row.nombre }}</div>
@@ -70,7 +67,13 @@
                                     <div class="text-sm text-gray-900">{{ row.email}}</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900"></div>
+                                    <div class="text-sm text-gray-900">{{ row.producto.descripcion}}</div>
+                                </th>
+                                <th class="text-left p-3 px-5">
+                                    <div >
+                                        <div v-if=" row.verificado !== 0 " class="text-sm text-gray-900">Reclamado</div>
+                                    </div>
+
                                 </th>
                             </tr>
                             </tbody>
@@ -99,21 +102,5 @@ export default {
     props:{
         ganadores:null
     },
-
-    data() {
-        return {
-            row: {
-                dni: null,
-                nombre: null,
-                apellido: null,
-                telefono : null,
-                direccion: null,
-                email : null,
-            },
-        }
-    },
-    mounted() {
-        console.log(this.ganadores)
-    }
 }
 </script>

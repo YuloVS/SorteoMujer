@@ -15,7 +15,7 @@ class SorteoController extends Controller
     /*
      *  Método que realiza el sorteo y registra al ganador,
      *  asigna el nro del sorteo al campo 'ganador' del registro de la persona
-     
+
     public function realizarSorteo()
     {
         $participantes = Inscripcion::whereGanador(0)->get();
@@ -37,13 +37,13 @@ class SorteoController extends Controller
     public function ganadores()
     : Response
     {
-        $ganadores = Inscripcion::where('ganador', '>',  0)->orderby('ganador','asc')->get();
+        $ganadores = Inscripcion::where('ganador', '>',  0)->with('producto')->orderby('ganador','asc')->get();
         return Inertia::render('Listado', ['ganadores' => $ganadores]);
     }
 
     public function realizarSorteo()
     : array
-    {       
+    {
         $ganadores = [];
         for($i=0; $i<30; $i++)
         {
@@ -63,7 +63,7 @@ class SorteoController extends Controller
                 $ganador->save();
 
                 $ganadores[$i] = ["nombre" => $ganador->nombre, "apellido" => $ganador->apellido, "dni" =>$ganador->dni, "producto_id" =>$premio->id];
-            } 
+            }
         }
         return $ganadores;
     }
