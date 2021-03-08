@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\InscripcionController;
 use App\Http\Controllers\SorteoController;
+use App\Http\Controllers\ProductosController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -23,7 +24,7 @@ Route::get('test', function(){ dd(\App\Models\Inscripcion::all()->toArray()); })
 //Route::get('/ganadores', [SorteoController::class, 'ganadores']);
 
 Route::get('/ganadores2', [SorteoController::class, 'realizarSorteo']);
-Route::post('/buscarPorDni/{$dni}', [SorteoController::class, 'buscarPremio']);
+Route::get('/buscarPorDni/{dni}', [ProductosController::class, 'buscarPremio']);
 
 //Route::inertia('/sorteos', 'Sorteo');
 //Route::inertia('/sorteos', 'Sorteo');
