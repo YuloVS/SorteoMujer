@@ -66,7 +66,6 @@ class SorteoController extends Controller
             $ganadores = [];
             for($i=0; $i<30; $i++)
             {
-
                 $premio = $premiosDisponibles->random();
                 $ganador = $participantes->random();
 
@@ -80,6 +79,12 @@ class SorteoController extends Controller
                 $ganadores[$i] = ["nombre" => $ganador->nombre, "apellido" => $ganador->apellido, "dni" =>$ganador->dni, "producto_id" =>$premio->id];
             } 
         }
+        return $ganadores;
+    }
+
+    public function ganadoresProductos()
+    {
+        $ganadores = Inscripcion::where("ganador", "<>", 0)->with("producto")->get();
         return $ganadores;
     }
 }
