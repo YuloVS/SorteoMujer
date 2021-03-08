@@ -26,9 +26,3 @@ Route::get('/productos', [SorteoController::class, 'productos'])->middleware('au
 
 Route::get('test', function(){ dd(\App\Models\Inscripcion::all()->toArray()); })->middleware('auth');
 
-//Route::get('/ganadores', [SorteoController::class, 'ganadores']);
-
-//Route::get('/buscarPorDni/{dni}', [ProductosController::class, 'buscarPremio']);
-
-//Route::inertia('/sorteos', 'Sorteo');
-//Route::inertia('/sorteos', 'Sorteo');

@@ -25,13 +25,12 @@
 					</button>
 				</div>
 
-				<ModalGanador :show="show" :ganadores="ganadores" />
+				<ModalGanador :show="show" :ganadores="ganadores"/>
 				<Modal :show="loading" :max-width="'sm'">
 					<div class="bg-gray-50">
 						<img class="mx-auto" src="/img/loading.gif" alt="">
 						<h1 class="text-3xl md:text-4xl text-center font-extrabold pb-4">Sorteando...</h1>
 					</div>
-
 				</Modal>
 
 			</div>
@@ -49,8 +48,8 @@ export default {
         return {
             show: false,
             ganadores: null,
-	        submited: false,
-	        loading: false
+            submited: false,
+            loading: false
         }
     },
 
@@ -63,18 +62,21 @@ export default {
     methods: {
         submit() {
             this.submited = true
-	        this.loading = true
+            this.loading = true
             axios.post("/sorteo").then((res) => {
                 this.loading = false
                 this.ganadores = res.data
-	            this.show = true
+                if (this.ganadores.length > 0)
+                    this.show = true
+                else
+                    alert("No es posible realizar mas sorteos.")
             })
         },
     },
-	mounted() {
+    mounted() {
         this.ganadores = null
-		this.submited = false
-		this.loading = false
+        this.submited = false
+        this.loading = false
     }
 }
 </script>
