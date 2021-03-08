@@ -21,7 +21,7 @@
 					        class="px-3 py-2 bg-pink-600 text-gray-50 text-base font-semibold uppercase rounded-lg hover:bg-pink-500 focus:outline-none focus:ring-0">
 						comenzar
 					</button>
-					<div id="output"></div>
+					<div class="flex text-6xl" id="output"></div>
 				</div>
 
 				<ModalGanador :show="show" :ganador="ganador"/>
@@ -130,7 +130,6 @@ export default {
   text-transform: uppercase;
   color: #fe0070;
   font-family: Verdana, sans-serif;
-  font-size: 7em;
   font-weight: bold;
   text-align: left;
   text-shadow: 0.08em 0em #c0bcbbc7;
