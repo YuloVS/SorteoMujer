@@ -94,6 +94,7 @@ class ProductosController extends Controller
         {
             $premio = Producto::where('id', $persona->producto_id);
             $persona->verificado = 1;
+            $persona->save();
             return [$persona, $premio];
         }
         else
