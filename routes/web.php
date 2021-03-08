@@ -16,7 +16,7 @@ Route::post('/formulario', [InscripcionController::Class, 'store']);
 Route::post('/sorteo', [SorteoController::class, 'realizarSorteo'])->middleware('auth');
 Route::get('/sorteos', [SorteoController::class, 'show'])->middleware('auth')->name("sorteo");
 
-Route::get('/listado', [SorteoController::class, 'listado'])->middleware('auth')->name("ganadores");
+Route::get('/listado', [SorteoController::class, 'ganadores'])->middleware('auth')->name("ganadores");
 
 Route::get('test', function(){ dd(\App\Models\Inscripcion::all()->toArray()); })->middleware('auth');
 

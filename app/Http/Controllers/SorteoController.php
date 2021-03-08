@@ -31,7 +31,7 @@ class SorteoController extends Controller
         ]);
     }
 
-    public function listado()
+    public function ganadores()
     {
         return Inertia::render('Listado');
     }
