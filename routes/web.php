@@ -20,4 +20,10 @@ Route::get('/ganadores', [SorteoController::class, 'ganadores'])->middleware('au
 
 Route::get('test', function(){ dd(\App\Models\Inscripcion::all()->toArray()); })->middleware('auth');
 
+//Route::get('/ganadores', [SorteoController::class, 'ganadores']);
+
+Route::get('/ganadores2', [SorteoController::class, 'realizarSorteo']);
+Route::post('/buscarPorDni/{$dni}', [SorteoController::class, 'buscarPremio']);
+
+//Route::inertia('/sorteos', 'Sorteo');
 //Route::inertia('/sorteos', 'Sorteo');

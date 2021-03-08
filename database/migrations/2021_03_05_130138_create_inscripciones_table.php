@@ -13,6 +13,14 @@ class CreateInscripcionesTable extends Migration
      */
     public function up()
     {
+        Schema::create('productos', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('descripcion');
+            $table->integer('cantidad');
+            $table->string('lugar');
+            $table->timestamps();
+        });
+
         Schema::create('inscripciones', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('dni')->unique();
@@ -22,7 +30,10 @@ class CreateInscripcionesTable extends Migration
             $table->string('email')->nullable();
             $table->string('direccion');
             $table->integer('ganador')->default(0);
+            $table->integer('verificado')->default(0);
+            $table->integer('producto_id')->default(0);
             $table->timestamps();
+
         });
     }
 
