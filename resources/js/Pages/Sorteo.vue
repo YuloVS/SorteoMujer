@@ -21,7 +21,7 @@
 					        class="px-3 py-2 bg-pink-600 text-gray-50 text-base font-semibold uppercase rounded-lg hover:bg-pink-500 focus:outline-none focus:ring-0">
 						comenzar
 					</button>
-					<div class="flex text-6xl" id="output"></div>
+					<div class="flex text-6xl" id="output" v-if="ganador"></div>
 				</div>
 
 				<ModalGanador :show="show" :ganador="ganador"/>
@@ -119,7 +119,6 @@ export default {
         },
     },
 	mounted() {
-        console.log("mee monté")
         this.ganador = null
     }
 }
