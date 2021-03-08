@@ -41,22 +41,17 @@ class SorteoController extends Controller
         return Inertia::render('Listado', ['ganadores' => $ganadores]);
     }
 
-<<<<<<< HEAD
     public function productos()
     {
         return Inertia::render('Productos');
-    }
-
-    public function verificar()
-    {
-        return Inertia::render('Verificar');
     }
 
     public function control()
     {
         $premio = "No bro, no ganaste nada";
         return Inertia::render('Control', ['premio' => $premio]);
-=======
+    }
+    
     public function realizarSorteo()
     : array
     {       
@@ -68,6 +63,7 @@ class SorteoController extends Controller
 
             if((!($premiosDisponibles->isEmpty())) && (!($participantes->isEmpty())))
             {
+
                 $premio = $premiosDisponibles->random();
                 $ganador = $participantes->random();
 
@@ -78,16 +74,16 @@ class SorteoController extends Controller
                 $ganador->ganador = 1;
                 $ganador->save();
 
-                $ganadores[$i] = ["nombre" => $ganador->nombre, "apellido" => $ganador->apellido, "dni" =>$ganador->dni, "producto_id" =>$premio->id];
+                $ganadores[$i] = ["nombre" => $ganador->nombre, "apellido" => $ganador->apellido, "dni" =>$ganador->dni, "producto" =>$premio->descripcion];
             } 
         }
         return $ganadores;
     }
+    
 
     public function ganadoresProductos()
     {
         $ganadores = Inscripcion::where("ganador", "<>", 0)->with("producto")->get();
         return $ganadores;
->>>>>>> main
     }
 }
