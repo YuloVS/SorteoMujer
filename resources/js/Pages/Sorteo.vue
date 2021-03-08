@@ -25,7 +25,14 @@
 					</button>
 				</div>
 
-				<ModalGanador :show="show" :ganadores="ganadores"/>
+				<ModalGanador :show="show" :ganadores="ganadores" />
+				<Modal :show="loading" :max-width="'sm'">
+					<div class="bg-gray-50">
+						<img class="mx-auto" src="/img/loading.gif" alt="">
+						<h1 class="text-3xl md:text-4xl text-center font-extrabold pb-4">Sorteando...</h1>
+					</div>
+
+				</Modal>
 
 			</div>
 		</div>
@@ -35,17 +42,20 @@
 <script>
 import SorteoLayout from "@/Layouts/SorteoLayout";
 import ModalGanador from "@/Pages/Componentes/ModalGanador";
+import Modal from "@/Jetstream/Modal";
 
 export default {
     data() {
         return {
             show: false,
             ganadores: null,
-	        submited: false
+	        submited: false,
+	        loading: false
         }
     },
 
     components: {
+        Modal,
         ModalGanador,
         SorteoLayout,
     },
@@ -53,7 +63,9 @@ export default {
     methods: {
         submit() {
             this.submited = true
+	        this.loading = true
             axios.post("/sorteo").then((res) => {
+                this.loading = false
                 this.ganadores = res.data
 	            this.show = true
             })
@@ -62,6 +74,7 @@ export default {
 	mounted() {
         this.ganadores = null
 		this.submited = false
+		this.loading = false
     }
 }
 </script>
