@@ -9,7 +9,7 @@
             <div class="grid grid-cols-3 gap-2 ml-10">
                 <div class="flex flex-row" v-for="ganador in ganadores">
                     <img class="w-10 mr-2 inline" v-bind:src="'/img/surprise.svg'" alt="">
-                    <h1 class="text-4xl md:text-2xl text-left font-bold mb-3 pt-4" v-text="ganador = ganador.nombre + ' ' + ganador.apellido + ' - ' + ganador.dni.toString().slice(ganador.dni.toString().length - 4) + ' - ' + ganador.producto"></h1>
+                    <h1 class="text-4xl md:text-xl text-left font-bold mb-3 pt-4" v-text="ganador = ganador.nombre + ' ' + ganador.apellido + ' - ' + ganador.dni.toString().slice(ganador.dni.toString().length - 4) + ' - ' + ganador.producto"></h1>
                 </div>
             </div>
 			<inertia-link :href="'/sorteos'" preserve-scroll class="flex">
