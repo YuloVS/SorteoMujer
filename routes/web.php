@@ -14,7 +14,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/', [InscripcionController::class, 'show']);
 Route::post('/formulario', [InscripcionController::Class, 'store']);
 
-Route::get('/verificar', [SorteoController::class, 'verificar'])->name("verificar");
+Route::get('/verificar', function() { return Inertia::render('Verificar'); })->name("verificar");
 Route::post('/verificando', [SorteoController::class, 'verificando'])->name("verificando");
 
 
