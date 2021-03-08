@@ -42,6 +42,7 @@ class SorteoController extends Controller
     }
 
     public function realizarSorteo()
+    : array
     {       
         $ganadores = [];
         for($i=0; $i<30; $i++)
@@ -51,18 +52,20 @@ class SorteoController extends Controller
 
             if((!($premiosDisponibles->isEmpty())) && (!($participantes->isEmpty())))
             {
-                
+
                 $premio = $premiosDisponibles->random();
                 $ganador = $participantes->random();
-                
-                $ganadores[$i] = ["nombre" => $ganador->nombre, "apellido" => $ganador->apellido, "dni" =>$ganador->dni, "producto_id" =>$premio->id];
+
                 $premio->cantidad = ($premio->cantidad) - 1;
                 $premio->save();
-                $ganador->producto_id = $premio->id;
 
+                $ganador->producto_id = $premio->id;
                 $ganador->ganador = 1;
                 $ganador->save();
+
+                $ganadores[$i] = ["nombre" => $ganador->nombre, "apellido" => $ganador->apellido, "dni" =>$ganador->dni, "producto_id" =>$premio->id];
             } 
-        };
+        }
+        return $ganadores;
     }
 }
