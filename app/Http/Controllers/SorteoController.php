@@ -63,7 +63,7 @@ class SorteoController extends Controller
                 $ganador->ganador = 1;
                 $ganador->save();
 
-                $ganadores[$i] = ["nombre" => $ganador->nombre, "apellido" => $ganador->apellido, "dni" =>$ganador->dni, "producto_id" =>$premio->id];
+                $ganadores[$i] = ["nombre" => $ganador->nombre, "apellido" => $ganador->apellido, "dni" =>$ganador->dni, "producto" =>$premio->descripcion];
             } 
         }
         return $ganadores;

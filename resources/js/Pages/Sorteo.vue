@@ -19,7 +19,7 @@
 				<div class="flex justify-center py-8">
 					<button @click.prevent="submit"
 					        class="px-3 py-2 bg-pink-600 text-gray-50 text-base font-semibold uppercase rounded-lg hover:bg-pink-500 focus:outline-none focus:ring-0"
-					        ref="boton"
+					        :disabled="submited"
 					>
 						comenzar
 					</button>
@@ -40,7 +40,8 @@ export default {
     data() {
         return {
             show: false,
-            ganadores: null
+            ganadores: null,
+	        submited: false
         }
     },
 
@@ -51,7 +52,7 @@ export default {
 
     methods: {
         submit() {
-            this.$refs.boton
+            this.submited = true
             axios.post("/sorteo").then((res) => {
                 this.ganadores = res.data
 	            this.show = true
@@ -61,6 +62,7 @@ export default {
     },
 	mounted() {
         this.ganadores = null
+		this.submited = false
     }
 }
 </script>
