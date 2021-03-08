@@ -31,7 +31,7 @@ class CreateInscripcionesTable extends Migration
             $table->string('direccion');
             $table->integer('ganador')->default(0);
             $table->integer('verificado')->default(0);
-            $table->integer('producto_id')->default(0);
+            $table->foreignId('producto_id')->nullable()->constrained();
             $table->timestamps();
 
         });

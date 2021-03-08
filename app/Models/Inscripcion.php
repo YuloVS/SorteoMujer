@@ -42,7 +42,7 @@ class Inscripcion extends Model
     }
 
     public function producto() {
-        return $this->hasOne('App\Models\Producto');
+        return $this->belongsTo('App\Models\Producto');
       }
 
 }
