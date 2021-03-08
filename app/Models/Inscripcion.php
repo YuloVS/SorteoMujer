@@ -40,4 +40,9 @@ class Inscripcion extends Model
     {
         return self::whereGanador(0)->get();
     }
+
+    public function producto() {
+        return $this->hasOne('App\Models\Producto');
+      }
+
 }
