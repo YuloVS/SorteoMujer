@@ -3,10 +3,10 @@
         <div class="flex justify-center mt-2 mb-auto">
             <div class="shadow-lg rounded mb-4 p-4">
                 <img class="w-72 mx-auto " v-bind:src = "'/img/DíaDeLaMujer.svg'" alt="">
-                <h1 class="text-4xl font-bold text-center mx-auto text-black mb-2">Ganadores</h1>
+                <h1 class="text-4xl font-bold text-center mx-auto text-black mb-2">Listado de productos</h1>
                 <div class="shadow overflow-hidden border-b border-gray-200 rounded-lg">
 
-                    <div v-if="this.ganadores.length === 0">
+                    <div v-if="false">
                         <!-- This example requires Tailwind CSS v2.0+ -->
                         <div class="bg-navbar">
                             <div class=" mx-auto py-3 px-3 sm:px-6 lg:px-8">
@@ -26,54 +26,41 @@
                     <div v-else>
                         <table class="min-w-full lg:divide-y divide-gray-400 overflow">
                             <thead class="bg-navbar text-center bg-pink-500">
-                            <tr class="text-center">
+                            <tr>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Participante
+                                    ID
                                 </th>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    DNI
+                                    Nombre
                                 </th>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Telefono/Direccion
+                                    Cantidad
                                 </th>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Email
+                                    Lugar de retiro
                                 </th>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Premio
-                                </th>
-                                <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Estado
+                                    Ganador
                                 </th>
                             </tr>
                             </thead>
 
                             <tbody class="bg-white divide-y divide-gray-200">
-                            <tr v-for="row in this.ganadores" class="border-b hover:bg-pink-100">
+                            <tr  class="border-b hover:bg-pink-100">
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">{{ row.apellido }}</div>
-                                    <div class="text-sm text-gray-500">{{ row.nombre }}</div>
+                                    <div class="text-sm text-gray-900">ID</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900"> {{ row.dni}}</div>
+                                    <div class="text-sm text-gray-900">Descripcion</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">{{ row.telefono}}</div>
-                                    <div class="text-sm text-gray-500">{{ row.direccion}}</div>
+                                    <div class="text-sm text-gray-900">Cantidad</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">{{ row.email}}</div>
+                                    <div class="text-sm text-gray-900">Lugar de retiro</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">{{ row.producto.descripcion}}</div>
-                                </th>
-                                <th class="text-left p-3 px-5">
-                                    <div >
-                                        <div v-if=" row.verificado !== 0 " class="text-sm text-gray-900">
-                                            Reclamado
-                                        </div>
-                                    </div>
-
+                                    <div class="text-sm text-gray-900">Ganador</div>
                                 </th>
                             </tr>
                             </tbody>
@@ -99,8 +86,16 @@ export default {
         Label,
     },
 
-    props:{
-        ganadores:null
+
+    data() {
+        return {
+            productos: {
+                id: null,
+                descripcion: null,
+                cantidad: null,
+                ganador: null,
+            },
+        }
     },
 }
 </script>
