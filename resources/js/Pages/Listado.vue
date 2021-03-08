@@ -1,8 +1,9 @@
 <template>
-    <FormularioLayout>
+    <SorteoLayout>
         <div class="flex justify-center mt-2 mb-auto">
             <div class="shadow-lg rounded mb-4 p-4">
-
+                <img class="w-72 mx-auto " v-bind:src = "'/img/DíaDeLaMujer.svg'" alt="">
+                <h1 class="text-4xl font-bold text-center mx-auto text-black mb-2">Ganadores</h1>
                 <div class="shadow overflow-hidden border-b border-gray-200 rounded-lg">
 
                     <div v-if="false">
@@ -27,53 +28,53 @@
 
                     <div v-else>
                         <table class="min-w-full lg:divide-y divide-gray-400">
-                            <thead class="bg-navbar text-center">
+                            <thead class="bg-navbar text-center bg-pink-500">
                             <tr>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Usuario/DNI
+                                    Nro de ganador
                                 </th>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Email/Teléfono
+                                    Participante
                                 </th>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Razon Social/Descripción
+                                    DNI
                                 </th>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Dirección/Localidad
+                                    Telefono/Direccion
                                 </th>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Teléfono
+                                    Email
                                 </th>
+
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Acciones
+
                                 </th>
-                                <th></th>
                             </tr>
                             </thead>
 
                             <tbody class="bg-white divide-y divide-gray-200">
-                            <tr  :key="row.id" class="border-b hover:bg-pink-500">
+                            <tr  class="border-b hover:bg-pink-100">
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">{{ row.apellido }}</div>
-                                    <div class="text-sm text-gray-500">{{ row.nombre }}</div>
+                                    <div class="text-sm text-gray-900"> {{ row.ganador}}Nro</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900"> {{ row.dni}}</div>
+                                    <div class="text-sm text-gray-900">{{ row.apellido }}apellido</div>
+                                    <div class="text-sm text-gray-500">{{ row.nombre }}nombre</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">{{ row.direccion}}</div>
-                                    <div class="text-sm text-gray-500">{{ row.telefono}}</div>
+                                    <div class="text-sm text-gray-900"> {{ row.dni}}dnidnidni</div>
+                                </th>
+                                <th class="text-left p-3 px-5">
+                                    <div class="text-sm text-gray-900">{{ row.telefono}}telefono</div>
+                                    <div class="text-sm text-gray-500">{{ row.direccion}}direcciondirecciondirecciondireccion</div>
                                 </th>
 
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">{{ row.email}}</div>
+                                    <div class="text-sm text-gray-900">{{ row.email}}emailemailemailemailemail</div>
                                 </th>
                                 <th class="text-left p-3 px-5">
                                     <div class="text-sm text-gray-900"></div>
                                 </th>
-                                <td class="text-left p-3 px-5">
-
-                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -85,15 +86,16 @@
 
             </div>
         </div>
-    </FormularioLayout>
+    </SorteoLayout>
 </template>
 
 
 <script>
-import FormularioLayout from "@/Layouts/FormularioLayout";
 import Label from "@/Jetstream/Label";
+import SorteoLayout from "@/Layouts/SorteoLayout";
 export default {
     components: {
+        SorteoLayout,
         Label,
     },
 
