@@ -93,11 +93,18 @@ class ProductosController extends Controller
         if($persona != null)
         {
             $premio = Producto::where('id', $persona->producto_id);
+            $persona->verificado = 1;
+            $persona->save();
             return [$persona, $premio];
         }
         else
         {
             return 'no gano ningun premio';
         }
+    }
+
+    public function ganadores()
+    {
+
     }
 }
