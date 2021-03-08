@@ -28,7 +28,7 @@
 
                     </div>
                     <div class="flex justify-center mt-6">
-                        <button @click="abrirModal()" class="px-3 py-2 bg-pink-600 text-gray-50 text-base font-semibold uppercase rounded-lg hover:bg-pink-500 focus:outline-none focus:ring-0">
+                        <button class="px-3 py-2 bg-pink-600 text-gray-50 text-base font-semibold uppercase rounded-lg hover:bg-pink-500 focus:outline-none focus:ring-0">
                             Verificar
                         </button>
                     </div>
