@@ -6,7 +6,7 @@
                 <h1 class="text-4xl font-bold text-center mx-auto text-black mb-2">Listado de productos</h1>
                 <div class="shadow overflow-hidden border-b border-gray-200 rounded-lg">
 
-                    <div v-if="false">
+                    <div v-if="!productos">
                         <!-- This example requires Tailwind CSS v2.0+ -->
                         <div class="bg-navbar">
                             <div class=" mx-auto py-3 px-3 sm:px-6 lg:px-8">
@@ -28,9 +28,6 @@
                             <thead class="bg-navbar text-center bg-pink-500">
                             <tr>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    ID
-                                </th>
-                                <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
                                     Nombre
                                 </th>
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
@@ -39,28 +36,19 @@
                                 <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
                                     Lugar de retiro
                                 </th>
-                                <th class="font-bold text-xs font-medium text-white uppercase text-left p-3 px-5">
-                                    Ganador
-                                </th>
                             </tr>
                             </thead>
 
                             <tbody class="bg-white divide-y divide-gray-200">
-                            <tr  class="border-b hover:bg-pink-100">
+                            <tr  class="border-b hover:bg-pink-100" v-for="producto in productos">
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">ID</div>
+                                    <div class="text-sm text-gray-900" v-text="producto.descripcion"></div>
                                 </th>
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">Descripcion</div>
+                                    <div class="text-sm text-gray-900" v-text="producto.cantidad"></div>
                                 </th>
                                 <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">Cantidad</div>
-                                </th>
-                                <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">Lugar de retiro</div>
-                                </th>
-                                <th class="text-left p-3 px-5">
-                                    <div class="text-sm text-gray-900">Ganador</div>
+                                    <div class="text-sm text-gray-900" v-text="producto.lugar"></div>
                                 </th>
                             </tr>
                             </tbody>
@@ -85,17 +73,8 @@ export default {
         SorteoLayout,
         Label,
     },
-
-
-    data() {
-        return {
-            productos: {
-                id: null,
-                descripcion: null,
-                cantidad: null,
-                ganador: null,
-            },
-        }
-    },
+	props: {
+        productos: null
+	}
 }
 </script>

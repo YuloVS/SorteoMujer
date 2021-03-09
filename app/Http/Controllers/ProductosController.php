@@ -2,33 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Producto;
-use App\Models\productos;
 use App\Models\Inscripcion;
 use Illuminate\Http\Request;
 
 class ProductosController extends Controller
 {
-    public function buscarPremio($dni)
+    public function consultarPremio(Request $request)
     {
-        $persona = Inscripcion::where('dni', $dni)
-            ->where('producto_id', '!=', 0)
-            ->first();
-        if($persona != null)
+        $persona = Inscripcion::whereDni($request->dni)->where('producto_id', '<>', 0)->with('producto')->first();
+        if($persona)
         {
-            $premio = Producto::where('id', $persona->producto_id);
             $persona->verificado = 1;
             $persona->save();
-            return [$persona, $premio];
+            return $persona->toArray();
         }
-        else
-        {
-            return 'no gano ningun premio';
-        }
-    }
-
-    public function ganadores()
-    {
-
+        return null;
     }
 }

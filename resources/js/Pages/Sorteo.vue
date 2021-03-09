@@ -19,13 +19,19 @@
 				<div class="flex justify-center py-8">
 					<button @click.prevent="submit"
 					        class="px-3 py-2 bg-pink-600 text-gray-50 text-base font-semibold uppercase rounded-lg hover:bg-pink-500 focus:outline-none focus:ring-0"
-					        ref="boton"
+					        :disabled="submited"
 					>
 						comenzar
 					</button>
 				</div>
 
 				<ModalGanador :show="show" :ganadores="ganadores"/>
+				<Modal :show="loading" :max-width="'sm'">
+					<div class="bg-gray-50">
+						<img class="mx-auto" src="/img/loading.gif" alt="">
+						<h1 class="text-3xl md:text-4xl text-center font-extrabold pb-4">Sorteando...</h1>
+					</div>
+				</Modal>
 
 			</div>
 		</div>
@@ -35,32 +41,42 @@
 <script>
 import SorteoLayout from "@/Layouts/SorteoLayout";
 import ModalGanador from "@/Pages/Componentes/ModalGanador";
+import Modal from "@/Jetstream/Modal";
 
 export default {
     data() {
         return {
             show: false,
-            ganadores: null
+            ganadores: null,
+            submited: false,
+            loading: false
         }
     },
 
     components: {
+        Modal,
         ModalGanador,
         SorteoLayout,
     },
 
     methods: {
         submit() {
-            this.$refs.boton
+            this.submited = true
+            this.loading = true
             axios.post("/sorteo").then((res) => {
+                this.loading = false
                 this.ganadores = res.data
-	            this.show = true
-                // this.ganador = ganador.nombre + " " + ganador.apellido + " - " + ganador.dni.toString().slice(ganador.dni.toString().length - 4)
+                if (this.ganadores.length > 0)
+                    this.show = true
+                else
+                    alert("No es posible realizar mas sorteos.")
             })
         },
     },
-	mounted() {
+    mounted() {
         this.ganadores = null
+        this.submited = false
+        this.loading = false
     }
 }
 </script>
