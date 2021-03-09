@@ -16,7 +16,7 @@
 
                 <div class="flex flex-col px-6">
                     <div><p class="text-left text-xl md:text-2xl  font-extrabold ">Podes retirarlo en:</p></div>
-                    <div><p class="text-xl md:text-2xl text-left font-extrabold text-pink-500" v-text="ganador.producto.lugar + ' de 8 a 13 hs'"></p></div>
+                    <div><p class="text-xl md:text-2xl text-left font-extrabold text-pink-500" v-text="ganador.producto.lugar + ' el 10/03 de 8 a 13 hs'"></p></div>
                 </div>
 
                 <hr class="bg-pink-600 mt-3" style="height:2px;border-width:0">
